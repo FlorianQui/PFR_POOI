@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Projet_Zombi
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            Console.WriteLine("OK ca marche");
+            Console.Write("Hello Zombi");
             Console.ReadKey();
         }
     }
