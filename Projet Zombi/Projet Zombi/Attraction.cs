@@ -11,10 +11,10 @@ namespace Projet_Zombi
         ///Attributs
         ///
 
-        String nom, type, typeMaintenance;
-        int identifiant, dureeMaintenance, nbMonstreMini;
-        bool enService, enMaintenance;
-        List<Employe> employeDansLAttraction;
+        private String nom, type, typeMaintenance;
+        private int identifiant, dureeMaintenance, nbMonstreMini, nbEntrees;
+        private bool enService, enMaintenance;
+        private List<Employe> employeDansLAttraction;
 
         ///Constructeur
         ///
@@ -25,6 +25,8 @@ namespace Projet_Zombi
             this.Type = type;
             this.Identifiant = identifiant;
             this.NbMonstreMini = nbMonstreMini;
+
+            employeDansLAttraction = new List<Employe>();
         }
 
         ///Accesseurs
@@ -35,6 +37,7 @@ namespace Projet_Zombi
         public string TypeMaintenance { get => typeMaintenance; set => typeMaintenance = value; }
         public int Identifiant { get => identifiant; set => identifiant = value; }
         public int DureeMaintenance { get => dureeMaintenance; set => dureeMaintenance = value; }
+        public int NbEntrees { get => nbEntrees; set => nbEntrees = value; }
         public int NbMonstreMini { get => nbMonstreMini; set => nbMonstreMini = value; }
         public bool EnService { get => enService; set => enService = value; }
         public bool EnMaintenance { get => enMaintenance; set => enMaintenance = value; }
@@ -49,6 +52,31 @@ namespace Projet_Zombi
             {
                 Console.WriteLine(employe.ToString());
             }
+        }
+
+        public void Afficher_Nb_Entrees()
+        {
+            Console.WriteLine("Nombre d'entrees : " + nbEntrees);
+        }
+
+        public void Mettre_Attraction_En_Maintenance(string typeMaintenance)
+        {
+            EnService = false;
+            TypeMaintenance = typeMaintenance;
+            EnMaintenance = true;
+        }
+
+        public void Mettre_Attraction_En_Maintenance_Pour( string typeMaintenance, int duree )
+        {
+            EnService = false;
+            TypeMaintenance = typeMaintenance;
+            EnMaintenance = true;
+            DureeMaintenance = duree;
+        }
+
+        public void Mettre_Attraction_En_Service()
+        {
+            EnService = true;
         }
     }
 }

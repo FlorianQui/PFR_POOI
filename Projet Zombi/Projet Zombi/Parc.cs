@@ -11,11 +11,11 @@ namespace Projet_Zombi
         ///Attributs
         ///
 
-        String nom, addresse, themeParc;
-        int capital;
-        List<Employe> direction;
-        List<Attraction> listeAttraction;
-        Personnel listeEmployes;
+        private String nom, addresse, themeParc;
+        private int capital;
+        private List<Employe> direction;
+        private List<Attraction> listeAttraction;
+        private Personnel personnel;
 
         ///Constructeur
         ///
@@ -25,6 +25,10 @@ namespace Projet_Zombi
             this.Addresse = addresse;
             this.ThemeParc = themeParc;
             this.Capital = capital;
+
+            listeAttraction = new List<Attraction>();
+            direction = new List<Employe>();
+            personnel = new Personnel();
         }
 
         ///Accesseurs
@@ -36,7 +40,7 @@ namespace Projet_Zombi
         public int Capital { get => capital; set => capital = value; }
         internal List<Employe> Direction { get => direction; set => direction = value; }
         internal List<Attraction> ListeAttraction { get => listeAttraction; set => listeAttraction = value; }
-        internal Personnel ListeEmployes { get => listeEmployes; set => listeEmployes = value; }
+        internal Personnel Personnel { get => personnel; set => personnel = value; }
 
         ///Méthodes
         ///
@@ -61,6 +65,32 @@ namespace Projet_Zombi
             if ( Direction.Contains(employe) )
             {
                 Direction.Remove(employe);
+                result = true;
+            }
+
+            return result;
+        }
+
+        public bool AjouterEmployeDuPersonnel( Employe employe )
+        {
+            bool result = false;
+
+            if( ! Personnel.Employes.Contains(employe) )
+            {
+                personnel.Employes.Add(employe);
+                result = true;
+            }
+
+            return result;
+        }
+
+        public bool LicencierEmployeDuPersonnel( Employe employe )
+        {
+            bool result = false;
+
+            if ( Personnel.Employes.Contains(employe) )
+            {
+                personnel.Employes.Remove(employe);
                 result = true;
             }
 
