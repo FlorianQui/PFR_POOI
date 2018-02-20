@@ -12,6 +12,9 @@ namespace Projet_Zombi
         {
             Console.Write("Hello Zombi");
             Console.ReadKey();
+            Parc parc = new Parc("Hello", "18 r", "peur", 20000);
+
+            Console.ReadKey();
         }
     }
 }
