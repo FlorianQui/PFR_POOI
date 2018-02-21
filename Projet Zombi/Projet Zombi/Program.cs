@@ -17,10 +17,12 @@ namespace Projet_Zombi
             Employe e = new Employe("robic", "gaetan", "34", Sexe.Feminin, "noob", 1, 8729918);
             Employe b = new Employe("zzoo", "GGGGGGGG", "34", Sexe.Feminin, "noob", 1, 8729918);
 
+            Sorcier s = new Sorcier()
 
 
-            parc.Personnel.RecruterEmployePersonnel(e);
-            parc.Personnel.RecruterEmployePersonnel(b);
+
+            parc.AjouterEmployeDuPersonnel(e);
+            parc.AjouterEmployeDuPersonnel(b);
 
             parc.Personnel.AfficherListePersonnel();
 

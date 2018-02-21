@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 namespace Projet_Zombi
 {
     public enum Sexe { Masculin, Feminin };
+    public enum Pouvoir { Feu, Air, Eau, Terre };
 
-    class Employe
+class Employe
     {
         ///Attributs
         ///
-        private Sexe sexe;
-        private string nom, prenom ,adresse, fonctionDansEntreprise;
-        private double salaire;
-        private int matricule;
+        protected Sexe sexe;
+        protected static string nom, prenom, adresse, fonctionDansEntreprise;
+        protected double salaire;
+        protected int matricule;
 
         ///Constructeur
         ///

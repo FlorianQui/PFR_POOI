@@ -22,6 +22,7 @@ namespace Projet_Zombi
         {
             this.Nom = nom;
             this.NbPlaces = nbPlaces;
+            Calendrier = new List<Reservation>();
         }
 
         ///Acceseurs
