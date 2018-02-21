@@ -55,6 +55,11 @@ namespace Projet_Zombi
                 result = true;
             }
 
+            Direction.Sort(delegate (Employe e1, Employe e2)
+            {
+                return e1.Nom.CompareTo(e2.Nom);
+            });
+
             return result;
         }
 
@@ -80,6 +85,11 @@ namespace Projet_Zombi
                 personnel.Employes.Add(employe);
                 result = true;
             }
+
+            personnel.Employes.Sort(delegate (Employe e1, Employe e2)
+                                        {
+                                            return e1.Nom.CompareTo(e2.Nom);
+                                        });
 
             return result;
         }

@@ -38,13 +38,5 @@ namespace Projet_Zombi
                 Console.WriteLine(e.ToString());
             }
         }
-
-        public void RecruterEmployePersonnel( Employe employe )
-        {
-            Employes.Add(employe);
-        }
-
-
-
     }
 }

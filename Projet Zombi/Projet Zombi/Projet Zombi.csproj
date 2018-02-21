@@ -48,6 +48,8 @@
     <Compile Include="Personnel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Salle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

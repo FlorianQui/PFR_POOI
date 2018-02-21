@@ -15,13 +15,19 @@ namespace Projet_Zombi
             Parc parc = new Parc("Hello", "18 r", "peur", 20000);
 
             Employe e = new Employe("robic", "gaetan", "34", Sexe.Feminin, "noob", 1, 8729918);
+            Employe b = new Employe("zzoo", "GGGGGGGG", "34", Sexe.Feminin, "noob", 1, 8729918);
 
-         
+
 
             parc.Personnel.RecruterEmployePersonnel(e);
+            parc.Personnel.RecruterEmployePersonnel(b);
 
             parc.Personnel.AfficherListePersonnel();
 
+            Console.ReadKey();
+
+            parc.LicencierEmployeDuPersonnel(e);
+            parc.Personnel.AfficherListePersonnel();
 
             Console.ReadKey();
         }
