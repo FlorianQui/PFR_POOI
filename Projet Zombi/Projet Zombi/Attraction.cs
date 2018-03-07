@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
+    public enum TypeBoutique { Souvenir, BarbeAPapa, Nourriture };
+    public enum TypeCategorie { Assise, Inverse, Bobsleigh };
+
+
+
     class Attraction
     {
         ///Attributs
         ///
 
         private String nom, type, typeMaintenance;
-        private int identifiant, dureeMaintenance, nbMonstreMini, nbEntrees;
-        private bool enService, enMaintenance;
-        private List<Employe> employeDansLAttraction;
+        private int identifiant, nbMonstreMini, nbEntrees;
+        private bool enService, enMaintenance, besoinSpecifique;
+        private List<Monstre> monstreDansLAttraction;
+        private TimeSpan dureeMaintenance;
 
         ///Constructeur
         ///
@@ -26,7 +32,7 @@ namespace Projet_Zombi
             this.Identifiant = identifiant;
             this.NbMonstreMini = nbMonstreMini;
 
-            employeDansLAttraction = new List<Employe>();
+            MonstreDansLAttraction = new List<Monstre>();
         }
 
         ///Accesseurs
@@ -36,19 +42,20 @@ namespace Projet_Zombi
         public string Type { get => type; set => type = value; }
         public string TypeMaintenance { get => typeMaintenance; set => typeMaintenance = value; }
         public int Identifiant { get => identifiant; set => identifiant = value; }
-        public int DureeMaintenance { get => dureeMaintenance; set => dureeMaintenance = value; }
-        public int NbEntrees { get => nbEntrees; set => nbEntrees = value; }
         public int NbMonstreMini { get => nbMonstreMini; set => nbMonstreMini = value; }
+        public int NbEntrees { get => nbEntrees; set => nbEntrees = value; }
         public bool EnService { get => enService; set => enService = value; }
         public bool EnMaintenance { get => enMaintenance; set => enMaintenance = value; }
-        internal List<Employe> EmployeDansLAttraction { get => employeDansLAttraction; set => employeDansLAttraction = value; }
+        public bool BesoinSpecifique { get => besoinSpecifique; set => besoinSpecifique = value; }
+        public TimeSpan DureeMaintenance { get => dureeMaintenance; set => dureeMaintenance = value; }
+        internal List<Monstre> MonstreDansLAttraction { get => monstreDansLAttraction; set => monstreDansLAttraction = value; }
 
         ///Méthodes
         ///
 
         public void Afficher_Employes_Sur_Attraction()
         {
-            foreach ( Employe employe in employeDansLAttraction )
+            foreach ( Employe employe in MonstreDansLAttraction )
             {
                 Console.WriteLine(employe.ToString());
             }
@@ -56,7 +63,7 @@ namespace Projet_Zombi
 
         public void Afficher_Nb_Entrees()
         {
-            Console.WriteLine("Nombre d'entrees : " + nbEntrees);
+            Console.WriteLine("Nombre d'entrees : " + NbEntrees);
         }
 
         public void Mettre_Attraction_En_Maintenance(string typeMaintenance)
@@ -66,7 +73,7 @@ namespace Projet_Zombi
             EnMaintenance = true;
         }
 
-        public void Mettre_Attraction_En_Maintenance_Pour( string typeMaintenance, int duree )
+        public void Mettre_Attraction_En_Maintenance_Pour( string typeMaintenance, TimeSpan duree )
         {
             EnService = false;
             TypeMaintenance = typeMaintenance;

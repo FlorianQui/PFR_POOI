@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
-    public enum Sexe { Masculin, Feminin };
+    public enum Sexe { Masculin, Feminin, Autre };
     public enum Pouvoir { Feu, Air, Eau, Terre };
+    public enum Grade { Novice, Mega, Giga, Strata };
+    public enum CouleurZombie { Bleuatre, Grisatre };
 
 class Employe
     {

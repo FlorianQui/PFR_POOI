@@ -11,13 +11,13 @@ namespace Projet_Zombi
         ///Attributs
         ///
 
-        string tatouage;
+        Grade tatouage;
         List<Pouvoir> pouvoirs;
 
         ///Constructeur
         ///
 
-        public Sorcier(string nom, string prenom, Sexe sexe, string fonctionDansLEntreprise, double salaire, int matricule, string tatouage, List<Pouvoir> pouvoirs) 
+        public Sorcier(string nom, string prenom, Sexe sexe, string fonctionDansLEntreprise, double salaire, int matricule, Grade tatouage, List<Pouvoir> pouvoirs) 
                       : base(nom, prenom, adresse, sexe, fonctionDansLEntreprise, salaire, matricule)
         {
             this.Tatouage = tatouage;
@@ -28,7 +28,7 @@ namespace Projet_Zombi
         ///Accesseurs
         ///
 
-        public string Tatouage { get => tatouage; set => tatouage = value; }
+        public Grade Tatouage { get => tatouage; set => tatouage = value; }
         public List<Pouvoir> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
     }
 }
