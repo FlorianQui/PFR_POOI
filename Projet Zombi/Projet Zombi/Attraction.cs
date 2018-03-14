@@ -16,7 +16,7 @@ namespace Projet_Zombi
         ///Attributs
         ///
 
-        private String nom, type, typeMaintenancen, typeBesoin;
+        private String nom, type, typeMaintenance, typeBesoin;
         private int identifiant, nbMonstreMini, nbEntrees;
         private bool enService, enMaintenance, besoinSpecifique;
         private List<Monstre> monstreDansLAttraction;
@@ -41,6 +41,7 @@ namespace Projet_Zombi
         public string Nom { get => nom; set => nom = value; }
         public string Type { get => type; set => type = value; }
         public string TypeMaintenance { get => typeMaintenance; set => typeMaintenance = value; }
+        public string TypeBesoin { get => typeBesoin; set => typeBesoin = value; }
         public int Identifiant { get => identifiant; set => identifiant = value; }
         public int NbMonstreMini { get => nbMonstreMini; set => nbMonstreMini = value; }
         public int NbEntrees { get => nbEntrees; set => nbEntrees = value; }

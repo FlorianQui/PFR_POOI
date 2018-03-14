@@ -11,7 +11,7 @@ namespace Projet_Zombi
     public enum Grade { Novice, Mega, Giga, Strata };
     public enum CouleurZombie { Bleuatre, Grisatre };
 
-class Employe
+abstract class Employe
     {
         ///Attributs
         ///

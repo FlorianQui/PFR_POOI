@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
-    class Monstre : Employe
+    abstract class Monstre : Employe
     {
         ///Attributs
         ///

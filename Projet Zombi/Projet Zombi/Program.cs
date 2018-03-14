@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Projet_Zombi
 {
@@ -14,22 +15,27 @@ namespace Projet_Zombi
             Console.ReadKey();
             Parc parc = new Parc("Hello", "18 r", "peur", 20000);
 
-            Employe e = new Employe("robic", "gaetan", "34", Sexe.Feminin, "noob", 1, 8729918);
-            Employe b = new Employe("zzoo", "GGGGGGGG", "34", Sexe.Feminin, "noob", 1, 8729918);
-
-            Sorcier s = new Sorcier();
-
-            parc.AjouterEmployeDuPersonnel(e);
-            parc.AjouterEmployeDuPersonnel(b);
+            //Sorcier s = new Sorcier();
 
             parc.Personnel.AfficherListePersonnel();
 
             Console.ReadKey();
-
-            parc.LicencierEmployeDuPersonnel(e);
             parc.Personnel.AfficherListePersonnel();
 
+            AjouterEmployeCSV();
+
             Console.ReadKey();
+        }
+
+        public static void AjouterEmployeCSV()
+        {
+            StreamReader streamReader = new StreamReader("Listing.csv");
+            string line = streamReader.ReadLine();
+            while (!streamReader.EndOfStream)
+            {
+                Console.WriteLine(line);
+                line = streamReader.ReadLine();
+            }
         }
     }
 }

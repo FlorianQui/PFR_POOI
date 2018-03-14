@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attraction.cs" />
+    <Compile Include="Demon.cs" />
     <Compile Include="Employe.cs" />
+    <Compile Include="Fantome.cs" />
+    <Compile Include="LoupGarou.cs" />
     <Compile Include="Monstre.cs" />
     <Compile Include="Parc.cs" />
     <Compile Include="Personnel.cs" />
@@ -53,6 +56,8 @@
     <Compile Include="Salle.cs" />
     <Compile Include="Sorcier.cs" />
     <Compile Include="Spectacle.cs" />
+    <Compile Include="Vampire.cs" />
+    <Compile Include="Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
