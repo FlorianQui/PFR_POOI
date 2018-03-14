@@ -16,7 +16,7 @@ namespace Projet_Zombi
         ///Attributs
         ///
 
-        private String nom, type, typeMaintenance;
+        private String nom, type, typeMaintenancen, typeBesoin;
         private int identifiant, nbMonstreMini, nbEntrees;
         private bool enService, enMaintenance, besoinSpecifique;
         private List<Monstre> monstreDansLAttraction;

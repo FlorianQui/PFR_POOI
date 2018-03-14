@@ -52,6 +52,7 @@
     <Compile Include="Reservation.cs" />
     <Compile Include="Salle.cs" />
     <Compile Include="Sorcier.cs" />
+    <Compile Include="Spectacle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
