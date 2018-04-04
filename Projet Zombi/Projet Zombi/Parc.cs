@@ -10,7 +10,6 @@ namespace Projet_Zombi
     {
         ///Attributs
         ///
-
         private String nom, addresse, themeParc;
         private int capital;
         private List<Employe> direction;
@@ -19,7 +18,7 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
-        public Parc( string nom, string addresse, string themeParc, int capital )
+        public Parc(string nom, string addresse, string themeParc, int capital)
         {
             this.Nom = nom;
             this.Addresse = addresse;
@@ -33,7 +32,6 @@ namespace Projet_Zombi
 
         ///Accesseurs
         ///
-
         public string Nom { get => nom; set => nom = value; }
         public string Addresse { get => addresse; set => addresse = value; }
         public string ThemeParc { get => themeParc; set => themeParc = value; }
@@ -44,18 +42,17 @@ namespace Projet_Zombi
 
         ///Méthodes
         ///
-
-        public bool AjouterMembreDirection ( Employe employe )
+        public bool AjouterMembreDirection(Employe employe)
         {
             bool result = false;
 
-            if ( ! Direction.Contains(employe) )
+            if (!Direction.Contains(employe))
             {
                 Direction.Add(employe);
                 result = true;
             }
 
-            Direction.Sort(delegate (Employe e1, Employe e2)
+            Direction.Sort((Employe e1, Employe e2) =>
             {
                 return e1.Nom.CompareTo(e2.Nom);
             });
@@ -63,11 +60,11 @@ namespace Projet_Zombi
             return result;
         }
 
-        public bool LicencierMembreDirection ( Employe employe )
+        public bool LicencierMembreDirection(Employe employe)
         {
             bool result = false;
 
-            if ( Direction.Contains(employe) )
+            if (Direction.Contains(employe))
             {
                 Direction.Remove(employe);
                 result = true;
@@ -76,29 +73,29 @@ namespace Projet_Zombi
             return result;
         }
 
-        public bool AjouterEmployeDuPersonnel( Employe employe )
+        public bool AjouterEmployeDuPersonnel(Employe employe)
         {
             bool result = false;
 
-            if( ! Personnel.Employes.Contains(employe) )
+            if (!Personnel.Employes.Contains(employe))
             {
                 personnel.Employes.Add(employe);
                 result = true;
             }
 
-            personnel.Employes.Sort(delegate (Employe e1, Employe e2)
-                                        {
-                                            return e1.Nom.CompareTo(e2.Nom);
-                                        });
+            personnel.Employes.Sort((Employe e1, Employe e2) =>
+            {
+                return e1.Nom.CompareTo(e2.Nom);
+            });
 
             return result;
         }
 
-        public bool LicencierEmployeDuPersonnel( Employe employe )
+        public bool LicencierEmployeDuPersonnel(Employe employe)
         {
             bool result = false;
 
-            if ( Personnel.Employes.Contains(employe) )
+            if (Personnel.Employes.Contains(employe))
             {
                 personnel.Employes.Remove(employe);
                 result = true;
@@ -107,12 +104,15 @@ namespace Projet_Zombi
             return result;
         }
 
+        //TODO lire csv pour ajouter membres
+
+        //TODO afficher membres direction et personnel
 
         ///ToString
         ///
-
         public override string ToString()
         {
+            //TODO finir
             string toString = "Parc";
             return toString;
         }

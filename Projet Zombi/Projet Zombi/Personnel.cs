@@ -10,13 +10,11 @@ namespace Projet_Zombi
     {
         ///Attributs
         ///
-
         private List<Employe> employes;
         private Employe responsableSyndical;
 
         ///Constructeur
         ///
-
         public Personnel()
         {
             employes = new List<Employe>();
@@ -30,7 +28,6 @@ namespace Projet_Zombi
 
         ///Méthodes
         ///
-
         public void AfficherListePersonnel()
         {
             foreach ( Employe e in Employes )
