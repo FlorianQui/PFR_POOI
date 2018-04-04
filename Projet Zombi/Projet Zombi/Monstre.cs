@@ -39,5 +39,10 @@ namespace Projet_Zombi
             monstre.Affectation = attraction;
         }
 
+        //TODO modifier cagnotte
+        //Si cagnotte > 50 -> barbe a papa
+        //Si > 500 -> pouvoir disparaitre + lire enoncé
+
+
     }
 }

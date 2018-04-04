@@ -108,6 +108,14 @@ namespace Projet_Zombi
 
         //TODO afficher membres direction et personnel
 
+        //TODO ajouter attractions
+
+        //TODO evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
+
+        //TODO trier personnel et attractions en fonction critères
+
+        //TODO 
+
         ///ToString
         ///
         public override string ToString()
