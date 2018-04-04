@@ -70,5 +70,18 @@ namespace Projet_Zombi
             EnMaintenance = false;
             EnService = true;
         }
+        public override string ToString()
+        {
+            string result ="";
+            if (enService == true)
+            {
+                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " est actuellement en service et a fait : " + nbEntrees + " entrés.";
+            }
+            else
+            {
+                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible mais a fait : " + nbEntrees + " entrés.";
+            }
+            return result;
+        }
     }
 }

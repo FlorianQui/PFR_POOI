@@ -39,6 +39,12 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + "Les prérequis mini sont : "+ageMini+ "ans"+ tailleMini+ "cm. Info complémentaire (TypeCatégorie) "+TypeCategorie;
+            return result;
 
+        }
     }
 }

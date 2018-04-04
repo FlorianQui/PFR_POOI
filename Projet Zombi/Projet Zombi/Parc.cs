@@ -103,24 +103,43 @@ namespace Projet_Zombi
 
             return result;
         }
-
+        public void ModifDeCagnotte(Monstre monstre)
+        {
+            if (monstre.Cagnotte < 50 && monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini)
+            {           
+                monstre.Affectation = null;
+                monstre.Affectation = ListeAttraction.Find(x => x.Nom == "BarbeaPapa");
+            }
+            if (monstre.Cagnotte > 500 && (monstre is Demon || monstre is Zombie) && (monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini))
+            {
+                monstre.Affectation = null;
+            }
+        }
+        public bool AjoutAttraction(Attraction attraction)
+        {
+            bool result = false;
+            if (!ListeAttraction.Contains(attraction))
+            {
+                ListeAttraction.Add(attraction);
+                result = true;
+            }
+            return result;
+        }
         //TODO gaetan lire csv pour ajouter membres
 
         //TODO gaetan afficher membres direction et personnel
 
-        //TODO gaetan ajouter attractions
-
         //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
         //TODO florian trier personnel et attractions en fonction critères
-
+        //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
         ///ToString
         ///
         public override string ToString()
         {
-            //TODO gaetan finir les toString
-            string toString = "Parc";
-            return toString;
+            string result = "";
+            result = "le Parc " + nom + " est situé a :" + addresse + " et a pour thème : " + themeParc + " et a pour capital " + capital + "€";
+            return result;
         }
     }
 }

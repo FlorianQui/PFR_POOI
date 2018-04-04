@@ -20,6 +20,12 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString();
+            return result;
 
+        }
     }
 }

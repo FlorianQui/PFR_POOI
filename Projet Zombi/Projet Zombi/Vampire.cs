@@ -26,6 +26,12 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + " possède un indice de luminosité " + indiceLuminosite;
+            return result;
 
+        }
     }
 }

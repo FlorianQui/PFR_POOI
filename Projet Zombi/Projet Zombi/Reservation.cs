@@ -35,6 +35,12 @@ namespace Projet_Zombi
         {
             return DateTime.Compare(reservation.DateDebut, reservation.DateFin);
         }
+        public override string ToString()
+        {
+            string result = "";
+            result = " la réservation est faite à partir de :"+dateDebut+ " jusqu'au : "+DateFin;
+            return result;
 
+        }
     }
 }

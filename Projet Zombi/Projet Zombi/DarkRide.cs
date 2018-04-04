@@ -33,7 +33,13 @@ namespace Projet_Zombi
         ///
         public TimeSpan Duree { get => duree; set => duree = value; }
         public bool Vehicule { get => vehicule; set => vehicule = value; }
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + " Infos complémentaire (durée,véhicule) :" + duree +", "+vehicule;
+            return result;
 
+        }
         ///Methodes
         ///
 

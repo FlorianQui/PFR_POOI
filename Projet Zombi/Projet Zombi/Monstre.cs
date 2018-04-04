@@ -39,9 +39,13 @@ namespace Projet_Zombi
             monstre.Affectation = attraction;
         }
 
-        //TODO gaetan modifier cagnotte  
-        //Si cagnotte > 50 -> barbe a papa
-        //Si > 500 -> pouvoir disparaitre + lire enoncé
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + " a pour affectation " + affectation + " et a une cagnotte de :" + cagnotte;
+            return result;
+
+        }
 
 
     }

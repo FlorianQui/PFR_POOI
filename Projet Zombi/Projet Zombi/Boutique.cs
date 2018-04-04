@@ -14,7 +14,7 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
-        public Boutique(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, TypeBoutique typeBoutique )
+        public Boutique(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, TypeBoutique typeBoutique)
         {
             this.Nom = nom;
             this.TypeDeBesoin = typeDeBesoin;
@@ -29,7 +29,13 @@ namespace Projet_Zombi
         ///Accesseurs
         ///
         public TypeBoutique TypeBoutique { get => typeBoutique; set => typeBoutique = value; }
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + " Infos complémentaire (TypeBoutique) :" + typeBoutique ;
+            return result;
 
+        }
         ///Methodes
         ///
     }

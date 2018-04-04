@@ -35,5 +35,12 @@ namespace Projet_Zombi
                 Console.WriteLine(e.ToString());
             }
         }
+        public override string ToString()
+        {
+            string result = "";
+            result ="Le personnel a pour responsable syndical : "+responsableSyndical;
+            return result;
+
+        }
     }
 }

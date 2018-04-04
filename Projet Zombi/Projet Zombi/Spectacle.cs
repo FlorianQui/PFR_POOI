@@ -43,5 +43,12 @@ namespace Projet_Zombi
             // TODO gaetan si pas salle ni reservation => false
             return true;
         }
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString()+"Elle possède "+NbPlaces+" places";
+            return result;
+
+        }
     }
 }

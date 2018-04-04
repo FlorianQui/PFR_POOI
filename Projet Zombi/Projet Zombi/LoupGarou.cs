@@ -25,5 +25,12 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public override string ToString()
+        {
+            string result = "";
+            result = base.ToString() + " il possède un indice de cruauté de "+ indiceCruaute;
+            return result;
+
+        }
     }
 }

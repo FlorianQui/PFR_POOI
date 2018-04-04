@@ -31,23 +31,22 @@ abstract class Employe
 
         public override string ToString()
         {
-            string toString = "L'employe du personnel : ";
+            string result = "L'employe du personnel : ";
 
             if ( Sexe == Sexe.masculin )
             {
-                toString += "Monsieur ";
+                result += "Monsieur ";
             }
             else
             {
-                toString += "Madame ";
+                result += "Madame ";
             }
 
-            toString += Nom.ToUpper() + " " + prenom +
+            result += Nom.ToUpper() + " " + prenom +
                         " travaille comme " + FonctionDansEntreprise +
-                        " avec un salaire de " + Salaire +
                         " : Matricule || " + Matricule;
 
-            return toString;
+            return result;
         }
 
     }
