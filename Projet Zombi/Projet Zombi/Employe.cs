@@ -11,36 +11,15 @@ abstract class Employe
         ///Attributs
         ///
         protected Sexe sexe;
-        protected static string nom, prenom, adresse, fonctionDansEntreprise;
-        protected double salaire;
+        protected string nom, prenom, fonctionDansEntreprise;
         protected int matricule;
-
-        ///Constructeur
-        ///
-
-        public Employe(string nom, string prenom, 
-                            string adresse, Sexe sexe, 
-                            string fonctionDansEntreprise, 
-                            double salaire, int matricule)
-        {
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Adresse = adresse;
-            this.Sexe = sexe;
-            this.FonctionDansEntreprise = fonctionDansEntreprise;
-            this.Salaire = salaire;
-            this.Matricule = matricule;
-        }
 
         ///Accesseurs
         ///
-
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
-        public string Adresse { get => adresse; set => adresse = value; }
         public Sexe Sexe { get => sexe; set => sexe = value; }
         public string FonctionDansEntreprise { get => fonctionDansEntreprise; set => fonctionDansEntreprise = value; }
-        public double Salaire { get => salaire; set => salaire = value; }
         public int Matricule { get => matricule; set => matricule = value; }
 
         ///Méthodes
@@ -54,7 +33,7 @@ abstract class Employe
         {
             string toString = "L'employe du personnel : ";
 
-            if ( Sexe == Sexe.Masculin )
+            if ( Sexe == Sexe.masculin )
             {
                 toString += "Monsieur ";
             }
@@ -64,9 +43,7 @@ abstract class Employe
             }
 
             toString += Nom.ToUpper() + " " + prenom +
-                        "\n     habite au " +
-                        Adresse + " travaille comme " +
-                        FonctionDansEntreprise +
+                        " travaille comme " + FonctionDansEntreprise +
                         " avec un salaire de " + Salaire +
                         " : Matricule || " + Matricule;
 

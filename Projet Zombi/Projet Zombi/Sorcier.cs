@@ -16,18 +16,20 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
-
-        public Sorcier(string nom, string prenom, Sexe sexe, string fonctionDansLEntreprise, double salaire, int matricule, Grade tatouage, List<Pouvoir> pouvoirs) 
-                      : base(nom, prenom, adresse, sexe, fonctionDansLEntreprise, salaire, matricule)
+        public Sorcier(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Grade tatouage, List<Pouvoir> pouvoirs) 
         {
+            this.Nom = nom;
+            this.Prenom = prenom;
+            this.Sexe = sexe;
+            this.FonctionDansEntreprise = fonctionDansEntreprise;
+            this.Matricule = matricule;
+
             this.Tatouage = tatouage;
             this.Pouvoirs = pouvoirs;
-            pouvoirs = new List<Pouvoir>();
         }
 
         ///Accesseurs
         ///
-
         public Grade Tatouage { get => tatouage; set => tatouage = value; }
         public List<Pouvoir> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
     }

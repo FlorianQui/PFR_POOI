@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
-    abstract class Monstre : Employe
+    class Monstre : Employe
     {
         ///Attributs
         ///
@@ -15,12 +15,14 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
-        public Monstre ( string nom, string prenom,
-                            string adresse, Sexe sexe,
-                            string fonctionDansEntreprise,
-                            double salaire, int matricule, Attraction affectation, int cagnotte )
-                       : base ( nom, prenom, adresse, sexe, fonctionDansEntreprise, salaire, matricule )
+        public Monstre ( string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte )
         {
+            this.Nom = nom;
+            this.Prenom = prenom;
+            this.Sexe = sexe;
+            this.FonctionDansEntreprise = fonctionDansEntreprise;
+            this.Matricule = matricule;
+
             this.Affectation = affectation;
             this.Cagnotte = cagnotte;
         }

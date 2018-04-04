@@ -8,13 +8,18 @@ namespace Projet_Zombi
 {
     class Fantome : Monstre
     {
-        public Fantome(string nom, string prenom,
-                            string adresse, Sexe sexe,
-                            string fonctionDansEntreprise,
-                            double salaire, int matricule, Attraction affectation, int cagnotte)
-                       : base(nom, prenom, adresse, sexe, fonctionDansEntreprise, salaire, matricule, affectation, cagnotte)
-        {
+        ///Attributs
+        ///
 
+        ///Constructeurs
+        ///
+        public Fantome(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte)
+            : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
+        {
         }
+
+        ///Methodes
+        ///
+
     }
 }

@@ -10,17 +10,22 @@ namespace Projet_Zombi
     {
         ///Attributs
         ///
-        float indeceLuminosite;
+        double indiceLuminosite;
 
-        ///Constructeur
+        ///Constructeurs
         ///
-        public Vampire(string nom, string prenom,
-                            string adresse, Sexe sexe,
-                            string fonctionDansEntreprise,
-                            double salaire, int matricule, Attraction affectation, int cagnotte, float indiceLuminosite)
-                       : base (nom, prenom, adresse, sexe, fonctionDansEntreprise, salaire, matricule, affectation,cagnotte)
+        public Vampire(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, double indiceLuminosite) 
+            : base (nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {
-            this.indeceLuminosite = indeceLuminosite;
+            this.IndiceLuminosite = indiceLuminosite;
         }
+
+        ///Accesseurs
+        ///
+        public double IndiceLuminosite { get => indiceLuminosite; set => indiceLuminosite = value; }
+
+        ///Methodes
+        ///
+
     }
 }

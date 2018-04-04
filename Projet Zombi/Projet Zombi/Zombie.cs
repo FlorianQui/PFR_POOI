@@ -8,17 +8,22 @@ namespace Projet_Zombi
 {
     class Zombie : Monstre
     {
+        ///Attributs
+        ///
         int degreDecomposition;
         CouleurZombie couleurZombie;
 
-        public Zombie(string nom, string prenom,
-                            string adresse, Sexe sexe,
-                            string fonctionDansEntreprise,
-                            double salaire, int matricule, Attraction affectation, int cagnotte, int degreDecompostion, CouleurZombie couleurZombie)
-                       : base(nom, prenom, adresse, sexe, fonctionDansEntreprise, salaire, matricule, affectation, cagnotte)
+        ///Constructeurs
+        ///
+        public Zombie(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, int degreDecomposition, CouleurZombie couleurZombie)
+            : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {
             this.degreDecomposition = degreDecomposition;
             this.couleurZombie = couleurZombie;
         }
+
+        ///Methodes
+        ///
+
     }
 }
