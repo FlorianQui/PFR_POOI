@@ -34,15 +34,10 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
-        public void AffecterAttraction ( Monstre monstre, Attraction attraction )
+        public void ChangerAffectation ( Attraction nouvelleAttraction )
         {
-            monstre.Affectation = attraction;
+            if (this.Affectation.Equipe.Count() > this.Affectation.NbMonstreMini) this.Affectation = nouvelleAttraction;
+            else Console.WriteLine("Impossible de changer l'affectation car l'equipe de l'attraction sera insufisante !");
         }
-
-        //TODO gaetan modifier cagnotte  
-        //Si cagnotte > 50 -> barbe a papa
-        //Si > 500 -> pouvoir disparaitre + lire enoncé
-
-
     }
 }

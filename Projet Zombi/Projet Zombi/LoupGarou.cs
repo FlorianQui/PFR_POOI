@@ -25,5 +25,14 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public void ChangerIndiceCruaute( double indice )
+        {
+            this.IndiceCruaute = indice;
+        }
+
+        public void ModifierIndiceCruaute ( double changement )
+        {
+            this.IndiceCruaute += changement;
+        }
     }
 }

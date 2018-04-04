@@ -12,5 +12,6 @@ namespace Projet_Zombi
     public enum Sexe { masculin, feminin, autre };
     public enum Pouvoir { feu, air, eau, terre };
     public enum CouleurZombie { bleuatre, grisatre };
+    public enum OrdreTrie { ASC, DESC };
 
 }

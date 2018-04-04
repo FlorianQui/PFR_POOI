@@ -26,6 +26,14 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public void ChangerIndiceLuminosite( double indice )
+        {
+            this.IndiceLuminosite = indice;
+        }
 
+        public void ModifierIndiceLuminosite( double changement )
+        {
+            this.IndiceLuminosite += changement;
+        }
     }
 }

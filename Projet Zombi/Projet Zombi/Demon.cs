@@ -26,6 +26,15 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+        public void ChangerForce( int force )
+        {
+            this.Force = force;
+        }
+
+        public void ModifierForce( int changement )
+        {
+            this.Force += changement;
+        }
 
     }
 }
