@@ -26,11 +26,23 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
+<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
             result = base.ToString() + " possède une force de " + force;
             return result;
+=======
+        public void ChangerForce( int force )
+        {
+            this.Force = force;
+        }
+
+        public void ModifierForce( int changement )
+        {
+            this.Force += changement;
+        }
+>>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
 
         }
     }

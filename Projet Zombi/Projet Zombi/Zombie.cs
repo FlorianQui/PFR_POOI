@@ -18,18 +18,39 @@ namespace Projet_Zombi
         public Zombie(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, int degreDecomposition, CouleurZombie couleurZombie)
             : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {
-            this.degreDecomposition = degreDecomposition;
-            this.couleurZombie = couleurZombie;
+            this.DegreDecomposition = degreDecomposition;
+            this.CouleurZombie = couleurZombie;
         }
+
+        ///Accesseurs
+        ///
+        public int DegreDecomposition { get => degreDecomposition; set => degreDecomposition = value; }
+        public CouleurZombie CouleurZombie { get => couleurZombie; set => couleurZombie = value; }
 
         ///Methodes
         ///
+<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
             result = base.ToString() + " possède un degre de décomposition de " + degreDecomposition+ " et une couleur de "+ couleurZombie;
             return result;
 
+=======
+        public void ModiferDegreDecomposition( int changement )
+        {
+            this.DegreDecomposition += changement;
+        }
+
+        public void ChangerDegreDecomposition ( int degre )
+        {
+            this.DegreDecomposition = degre;
+        }
+
+        public void ModifierCouleurZombie( CouleurZombie couleurZombie )
+        {
+            this.CouleurZombie = couleurZombie;
+>>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
         }
     }
 }

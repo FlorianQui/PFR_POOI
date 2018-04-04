@@ -131,8 +131,24 @@ namespace Projet_Zombi
 
         //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
+<<<<<<< HEAD
         //TODO florian trier personnel et attractions en fonction critères
         //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
+=======
+        
+        public void trierPersonnel( string critere, OrdreTrie ordreTrie )
+        {
+            //TODO florian trier personnel et attractions en fonction critères
+            critere.ToLower();
+            this.Personnel.Employes.Sort( (Employe e1, Employe e2) =>
+            {
+                if ( ordreTrie == OrdreTrie.ASC )
+                {
+                }
+            });
+        }
+
+>>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
         ///ToString
         ///
         public override string ToString()

@@ -24,7 +24,9 @@ namespace Projet_Zombi
             this.NbMonstreMini = nbMonstreMini;
             this.NbPlaces = nbPlaces;
             this.Salle = salle;
-            this.Horaire = horaire;
+
+            if (!this.Salle.Calendrier.Contains(horaire)) this.Horaire = horaire;
+            else Console.WriteLine("Plage horaire déjà occupée !");
 
             this.Equipe = new List<Monstre>();
             this.EnService = false;
@@ -43,6 +45,7 @@ namespace Projet_Zombi
             // TODO gaetan si pas salle ni reservation => false
             return true;
         }
+<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
@@ -50,5 +53,22 @@ namespace Projet_Zombi
             return result;
 
         }
+=======
+
+        public void ChangerSalle( Salle nouvelleSalle )
+        {
+            if (!nouvelleSalle.Calendrier.Contains(this.Horaire)) this.Salle = nouvelleSalle;
+            else Console.WriteLine("Impossible de changer la plage horaire car elle est deja reservee !");
+        }
+
+        public void ChangerHoraire(DateTime heureDebut, DateTime heureFin)
+        {
+            Reservation reservation = new Reservation(heureDebut, heureFin);
+
+            if (!this.Salle.Calendrier.Contains(reservation)) this.Horaire = reservation;
+            else Console.WriteLine("Plage horaire déjà occupée !");
+        }
+
+>>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
     }
 }
