@@ -104,23 +104,21 @@ namespace Projet_Zombi
             return result;
         }
 
-        //TODO lire csv pour ajouter membres
+        //TODO gaetan lire csv pour ajouter membres
 
-        //TODO afficher membres direction et personnel
+        //TODO gaetan afficher membres direction et personnel
 
-        //TODO ajouter attractions
+        //TODO gaetan ajouter attractions
 
-        //TODO evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
+        //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
-        //TODO trier personnel et attractions en fonction critères
-
-        //TODO 
+        //TODO florian trier personnel et attractions en fonction critères
 
         ///ToString
         ///
         public override string ToString()
         {
-            //TODO finir
+            //TODO gaetan finir les toString
             string toString = "Parc";
             return toString;
         }

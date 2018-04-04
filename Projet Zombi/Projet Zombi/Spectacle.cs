@@ -40,7 +40,7 @@ namespace Projet_Zombi
         ///
         public bool SpectacleAccepte()
         {
-            // TODO si pas salle ni reservation => false
+            // TODO gaetan si pas salle ni reservation => false
             return true;
         }
     }
