@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Projet_Zombi
 {
@@ -106,9 +109,9 @@ namespace Projet_Zombi
         public void ModifDeCagnotte(Monstre monstre)
         {
             if (monstre.Cagnotte < 50 && monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini)
-            {           
+            {
                 monstre.Affectation = null;
-                monstre.Affectation = ListeAttraction.Find(x => x.Nom == "BarbeaPapa");
+                monstre.Affectation = ListeAttraction.Find(attraction => attraction.Nom == "BarbeAPapa");
             }
             if (monstre.Cagnotte > 500 && (monstre is Demon || monstre is Zombie) && (monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini))
             {
@@ -131,24 +134,101 @@ namespace Projet_Zombi
 
         //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
-<<<<<<< HEAD
-        //TODO florian trier personnel et attractions en fonction critères
         //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
-=======
-        
-        public void trierPersonnel( string critere, OrdreTrie ordreTrie )
+
+
+
+        public void TrierParClasseEtCritere<T>(List<T> liste, string critere, OrdreTrie ordreTrie) where T : IComparable
         {
-            //TODO florian trier personnel et attractions en fonction critères
-            critere.ToLower();
-            this.Personnel.Employes.Sort( (Employe e1, Employe e2) =>
+            try
             {
-                if ( ordreTrie == OrdreTrie.ASC )
+                var prop = typeof(T).GetProperty(critere);
+
+                if (prop != null)
                 {
+                    Comparison<T> asc = (T t1, T t2) => ((IComparable)prop.GetValue(t1)).CompareTo(prop.GetValue(t2));
+                    Comparison<T> desc = (T t1, T t2) => ((IComparable)prop.GetValue(t2)).CompareTo(prop.GetValue(t1));
+
+                    liste.Sort(ordreTrie == OrdreTrie.ASC ? asc : desc);
                 }
-            });
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Propriete invalide");
+            }
         }
 
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
+        public void EcrireListeVersCSV<T>(List<T> liste)
+        {
+            using (StreamWriter writer = new StreamWriter("[" + typeof(T).Name + "]" + ".txt"))
+            {
+                foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
+                    writer.Write(descriptor.Name + ";");
+
+                writer.WriteLine();
+
+                foreach (T t in liste)
+                {
+                    foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
+                    {
+                        writer.Write(descriptor.GetValue(t) + ";");
+                    }
+                    writer.WriteLine();
+                }
+            }
+        }
+        public void PeuplementCSV()
+        {
+            try
+            {
+                StreamReader reader = new StreamReader("Feuil1.csv");
+
+                while (!reader.EndOfStream)
+                {
+                    string[] line = reader.ReadLine().Split(';');
+
+                    Peuplement(line);
+                }
+            }
+            catch (FileNotFoundException err)
+            {
+                err = new FileNotFoundException();
+                Console.WriteLine(err.Message);
+            }
+        }
+
+        public void Peuplement(string[] line)
+        {
+            try
+            {
+                Type type = Type.GetType("Projet_Zombi." + line[0]);
+
+                if (type != null)
+                {
+                    object obj = Activator.CreateInstance(type, new object[] { "nom", null, null, null, null, null, null });
+
+                    this.Personnel.Employes.Add(obj as ty);
+                }
+
+                
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Classe invalide");
+            }
+        }
+
+        public static I CreateInstance<I>() where I : class
+        {
+            string assemblyPath = Environment.CurrentDirectory + "\\DynamicCreateInstanceofclass.exe";
+
+            Assembly assembly;
+
+            assembly = Assembly.LoadFrom(assemblyPath);
+            Type type = assembly.GetType("DynamicCreateInstanceofclass.UserDetails");
+            return Activator.CreateInstance(type) as I;
+        }
+
         ///ToString
         ///
         public override string ToString()

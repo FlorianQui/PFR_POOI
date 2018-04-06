@@ -45,7 +45,6 @@ namespace Projet_Zombi
             // TODO gaetan si pas salle ni reservation => false
             return true;
         }
-<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
@@ -53,7 +52,6 @@ namespace Projet_Zombi
             return result;
 
         }
-=======
 
         public void ChangerSalle( Salle nouvelleSalle )
         {
@@ -68,7 +66,5 @@ namespace Projet_Zombi
             if (!this.Salle.Calendrier.Contains(reservation)) this.Horaire = reservation;
             else Console.WriteLine("Plage horaire déjà occupée !");
         }
-
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
     }
 }

@@ -32,14 +32,13 @@ namespace Projet_Zombi
         ///
         public Grade Tatouage { get => tatouage; set => tatouage = value; }
         public List<Pouvoir> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
-<<<<<<< HEAD
+
         public override string ToString()
         {
             string result = "";
-            result = base.ToString() + "Il possède un tatouage de Grade"+tatouage;
+            result = base.ToString() + " Il possède un tatouage de Grade"+tatouage;
             return result;
-
-=======
+        }
 
         ///Methodes
         ///
@@ -66,7 +65,6 @@ namespace Projet_Zombi
             {
                 Console.Write(p.ToString() + "|");
             }
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
         }
     }
 }

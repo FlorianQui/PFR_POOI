@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
-abstract class Employe
+abstract class Employe : IComparable
     {
         ///Attributs
         ///
@@ -22,9 +22,15 @@ abstract class Employe
         public string FonctionDansEntreprise { get => fonctionDansEntreprise; set => fonctionDansEntreprise = value; }
         public int Matricule { get => matricule; set => matricule = value; }
 
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+
         ///Méthodes
         ///
-        
+
 
         ///ToString
         ///

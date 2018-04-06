@@ -46,15 +46,12 @@ namespace Projet_Zombi
             }
 
             return result;
-
-            public override string ToString()
+        }
+        public override string ToString()
         {
             string result = "";
             result = "La salle "+nom+"possède "+nbPlaces+"places et peux être réservée selon un calendrier.";
             return result;
-
         }
-
-    }
     }
 }

@@ -30,7 +30,7 @@ namespace Projet_Zombi
         ///
         public void AfficherListePersonnel()
         {
-            Console.WriteLine("<Personnel> " + ResponsableSyndical.ToString());
+            //Console.WriteLine("<Personnel> " + ResponsableSyndical.ToString());
             foreach ( Employe e in Employes )
             {
                 Console.WriteLine(e.ToString());

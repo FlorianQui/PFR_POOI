@@ -29,14 +29,13 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
-<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
             result = base.ToString() + " possède un degre de décomposition de " + degreDecomposition+ " et une couleur de "+ couleurZombie;
             return result;
+        }
 
-=======
         public void ModiferDegreDecomposition( int changement )
         {
             this.DegreDecomposition += changement;
@@ -50,7 +49,6 @@ namespace Projet_Zombi
         public void ModifierCouleurZombie( CouleurZombie couleurZombie )
         {
             this.CouleurZombie = couleurZombie;
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
         }
     }
 }

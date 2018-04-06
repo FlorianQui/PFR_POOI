@@ -34,13 +34,11 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
-        public void ChangerAffectation ( Attraction nouvelleAttraction )
+        public void ModifierAffectation ( Attraction nouvelleAttraction )
         {
             if (this.Affectation.Equipe.Count() > this.Affectation.NbMonstreMini) this.Affectation = nouvelleAttraction;
             else Console.WriteLine("Impossible de changer l'affectation car l'equipe de l'attraction sera insufisante !");
         }
-<<<<<<< HEAD
-
         public override string ToString()
         {
             string result = "";
@@ -48,9 +46,5 @@ namespace Projet_Zombi
             return result;
 
         }
-
-
-=======
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
     }
 }

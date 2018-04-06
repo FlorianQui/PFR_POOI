@@ -70,6 +70,7 @@ namespace Projet_Zombi
             EnMaintenance = false;
             EnService = true;
         }
+
         public override string ToString()
         {
             string result ="";

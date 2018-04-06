@@ -25,14 +25,12 @@ namespace Projet_Zombi
 
         ///Methodes
         ///
-<<<<<<< HEAD
         public override string ToString()
         {
             string result = "";
             result = base.ToString() + " il possède un indice de cruauté de "+ indiceCruaute;
             return result;
-
-=======
+        }
         public void ChangerIndiceCruaute( double indice )
         {
             this.IndiceCruaute = indice;
@@ -41,7 +39,6 @@ namespace Projet_Zombi
         public void ModifierIndiceCruaute ( double changement )
         {
             this.IndiceCruaute += changement;
->>>>>>> a5256da419576b82f30b3126cc8521523e9e3c15
         }
     }
 }
