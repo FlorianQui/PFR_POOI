@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Projet_Zombi
 {
-abstract class Employe : IComparable
+    abstract class Employe : IComparable
     {
         ///Attributs
         ///
@@ -39,7 +41,7 @@ abstract class Employe : IComparable
         {
             string result = "<" + this.GetType().Name + "> " + "L'employe du personnel : ";
 
-            if ( Sexe == Sexe.male )
+            if (Sexe == Sexe.male)
             {
                 result += "Monsieur ";
             }

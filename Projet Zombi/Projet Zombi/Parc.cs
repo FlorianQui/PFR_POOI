@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel;
 using System.Reflection;
+using System.Xml.Serialization;
 
 namespace Projet_Zombi
 {
@@ -119,13 +120,13 @@ namespace Projet_Zombi
             }
             return result;
         }
-        //TODO gaetan lire csv pour ajouter membres
+    //TODO gaetan lire csv pour ajouter membres
 
-        //TODO gaetan afficher membres direction et personnel
+    //TODO gaetan afficher membres direction et personnel
 
-        //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
+    //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
-        //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
+    //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
 
         public void AfficherListe<T> (List<T> liste)
         {
@@ -169,6 +170,15 @@ namespace Projet_Zombi
             }
         }
 
+
+        public List<T> TrierParClasseEtCritere<T> (List<T> liste,string classe, string critere, OrdreTrie ordre) where T : IComparable
+        {
+            List<T> result = ListeParClasse(liste, classe);
+            TrierParCritere(result, critere, ordre);
+
+            return result;
+        }
+
         public void EcrireListeVersCSV<T>(List<T> liste)
         {
             using (StreamWriter writer = new StreamWriter("[" + typeof(T).Name + "]" + ".csv"))
@@ -192,22 +202,22 @@ namespace Projet_Zombi
         {
             try
             {
-                StreamReader reader = new StreamReader("Listing.txt");
+                StreamReader reader = new StreamReader("Listing.csv");
 
                 while (!reader.EndOfStream)
                 {
                     string[] line = reader.ReadLine().Split(';');
-                    PremierPeuplement(line);
+                    Peuplement(line);
                 }
             }
-            catch (FileNotFoundException err)
+            catch (Exception err)
             {
-                err = new FileNotFoundException();
+                //err = new FileNotFoundException();
                 Console.WriteLine(err.Message);
             }
         }
 
-        public void PremierPeuplement(string[] line)
+        public void Peuplement(string[] line)
         {
             try
             {

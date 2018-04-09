@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Zombi
 {
-    abstract class Attraction
+    abstract class Attraction : IComparable, IEnumerable
     {
         /////////////Vérifié 04-04-2018
 
@@ -50,6 +51,16 @@ namespace Projet_Zombi
             Console.WriteLine("Nombre d'entrees : " + NbEntrees);
         }
 
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Mettre_Attraction_En_Maintenance(string typeMaintenance)
         {
             EnService = false;
@@ -73,12 +84,12 @@ namespace Projet_Zombi
 
         public override string ToString()
         {
-            string result ="";
+            string result ="[" + this.GetType() + "]";
             if (enService == true)
             {
                 result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " est actuellement en service et a fait : " + nbEntrees + " entrés.";
             }
-            else
+            if(enService == false)
             {
                 result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible mais a fait : " + nbEntrees + " entrés.";
             }
