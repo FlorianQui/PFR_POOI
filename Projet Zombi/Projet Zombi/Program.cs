@@ -32,7 +32,7 @@ namespace Projet_Zombi
 
             //Console.WriteLine(parc.ListeAttraction[3].ToString());
 
-             parc.ListeAttraction[3].Mettre_Attraction_En_Service();
+             //parc.ListeAttraction[3].Mettre_Attraction_En_Service();
             //Console.WriteLine(parc.ListeAttraction[3].ToString());
 
             //4
@@ -41,15 +41,13 @@ namespace Projet_Zombi
             //parc.TrierParCritere(parc.ListeAttraction, "enMaintenance", OrdreTrie.ASC);
             //parc.AfficherListe( parc.ListeAttraction);
 
-            var query = from x in parc.Personnel.Employes
-                        where x.GetType() == typeof(Demon)
-                        select x;
+            List<Attraction> list = parc.Query(parc.ListeAttraction, "NbEntrees", 0);
 
-            foreach( dynamic r in query)
-            {
-                Console.WriteLine(r.ToString());
-            }
-            //parc.AfficherListe(parc.ListeAttraction);
+            parc.AfficherListe(list);
+            
+            parc.EcrireListeVersCSV(parc.Personnel.Employes);
+
+            parc.
 
             Console.ReadKey();
         }

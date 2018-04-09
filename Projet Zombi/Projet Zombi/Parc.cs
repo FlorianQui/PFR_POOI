@@ -103,7 +103,7 @@ namespace Projet_Zombi
             if (monstre.Cagnotte < 50 && monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini)
             {
                 monstre.Affectation = null;
-                monstre.Affectation = ListeAttraction.Find(attraction  => attraction.Nom == "Barbe Noire");
+                monstre.Affectation = ListeAttraction.Find(attraction => attraction.Nom == "Barbe Noire");
             }
             if (monstre.Cagnotte > 500 && (monstre is Demon || monstre is Zombie) && (monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini))
             {
@@ -120,22 +120,22 @@ namespace Projet_Zombi
             }
             return result;
         }
-    //TODO gaetan lire csv pour ajouter membres
+        //TODO gaetan lire csv pour ajouter membres
 
-    //TODO gaetan afficher membres direction et personnel
+        //TODO gaetan afficher membres direction et personnel
 
-    //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
+        //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
 
-    //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
+        //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
 
-        public void AfficherListe<T> (List<T> liste)
+        public void AfficherListe<T>(List<T> liste)
         {
-            foreach( T t in liste )
+            foreach (T t in liste)
             {
                 Console.WriteLine(t.ToString());
             }
         }
-        public List<T> ListeParClasse<T> (List<T> liste, string classe)
+        public List<T> ListeParClasse<T>(List<T> liste, string classe)
         {
             Type type = Type.GetType("Projet_Zombi." + classe);
 
@@ -150,7 +150,7 @@ namespace Projet_Zombi
             else return null;
         }
 
-        public void TrierParCritere<T> (List<T> liste, string critere, OrdreTrie ordreTrie) where T : IComparable
+        public void TrierParCritere<T>(List<T> liste, string critere, OrdreTrie ordreTrie) where T : IComparable
         {
             try
             {
@@ -171,7 +171,7 @@ namespace Projet_Zombi
         }
 
 
-        public List<T> TrierParClasseEtCritere<T> (List<T> liste,string classe, string critere, OrdreTrie ordre) where T : IComparable
+        public List<T> TrierParClasseEtCritere<T>(List<T> liste, string classe, string critere, OrdreTrie ordre) where T : IComparable
         {
             List<T> result = ListeParClasse(liste, classe);
             TrierParCritere(result, critere, ordre);
@@ -179,18 +179,27 @@ namespace Projet_Zombi
             return result;
         }
 
+        public List<T> Query<T>(List<T> liste, string critere, dynamic value ) 
+        {
+            var query = from T t in liste
+                        where typeof(T).GetProperty(critere).GetValue(t).Equals(value)
+                        select t;
+            return query.ToList();
+        }
+
         public void EcrireListeVersCSV<T>(List<T> liste)
         {
-            using (StreamWriter writer = new StreamWriter("[" + typeof(T).Name + "]" + ".csv"))
+            using (StreamWriter writer = new StreamWriter(typeof(T).Name + ".csv"))
             {
-                foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
+                /*foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
                     writer.Write(descriptor.Name + ";");
 
-                writer.WriteLine();
+                writer.WriteLine();*/
 
                 foreach (T t in liste)
                 {
-                    foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
+                    writer.Write(t.GetType().Name + ";");
+                    foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(t.GetType()))
                     {
                         writer.Write(descriptor.GetValue(t) + ";");
                     }

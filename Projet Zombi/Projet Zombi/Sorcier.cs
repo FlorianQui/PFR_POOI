@@ -35,7 +35,32 @@ namespace Projet_Zombi
         ///Accesseurs
         ///
         public Grade Tatouage { get => tatouage; set => tatouage = value; }
+
+        //TODO: trouver une solution pour despliter
         public List<string> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
+
+        public String PouvoirString
+        {
+            get
+            {
+                return this.pouvoirToString();
+            }
+        }
+
+
+        private String pouvoirToString()
+        {
+
+            String result = "";
+            foreach(String s in this.pouvoirs)
+            {
+                result += s + " ";
+            }
+            return result;
+
+        }
+
+
 
         public override string ToString()
         {
