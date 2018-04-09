@@ -16,6 +16,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public RollerCoaster()
+        {
+                
+        }
         public RollerCoaster(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, int ageMini, float tailleMini, TypeCategorie typeCategorie )
         {
             this.Nom = nom;

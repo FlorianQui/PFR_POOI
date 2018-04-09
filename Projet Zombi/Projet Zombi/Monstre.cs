@@ -15,6 +15,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public Monstre()
+        {
+
+        }
         public Monstre ( string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte )
         {
             this.Nom = nom;

@@ -12,11 +12,15 @@ namespace Projet_Zombi
         ///
 
         Grade tatouage;
-        List<Pouvoir> pouvoirs;
+        List<string> pouvoirs;
 
         ///Constructeur
         ///
-        public Sorcier(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Grade tatouage, List<Pouvoir> pouvoirs) 
+        public Sorcier()
+        {
+            this.Pouvoirs = new List<string>();
+        }
+        public Sorcier(Grade tatouage, List<string> pouvoirs, int matricule, string nom, string prenom, Sexe sexe, string fonctionDansEntreprise,  Grade tatouag, List<string> pouvoir) 
         {
             this.Nom = nom;
             this.Prenom = prenom;
@@ -24,14 +28,14 @@ namespace Projet_Zombi
             this.FonctionDansEntreprise = fonctionDansEntreprise;
             this.Matricule = matricule;
 
-            this.Tatouage = tatouage;
-            this.Pouvoirs = pouvoirs;
+            this.Tatouage = tatouag;
+            this.Pouvoirs = pouvoir;
         }
 
         ///Accesseurs
         ///
         public Grade Tatouage { get => tatouage; set => tatouage = value; }
-        public List<Pouvoir> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
+        public List<string> Pouvoirs { get => pouvoirs; set => pouvoirs = value; }
 
         public override string ToString()
         {
@@ -47,13 +51,13 @@ namespace Projet_Zombi
             this.Tatouage = tatouage;
         }
 
-        public void AjouterPouvoir( Pouvoir pouvoir )
+        public void AjouterPouvoir( string pouvoir )
         {
             if (!this.Pouvoirs.Contains(pouvoir)) this.Pouvoirs.Add(pouvoir);
             else Console.WriteLine("Pouvoir deja existant");
         }
 
-        public void SupprimerPouvoir(Pouvoir pouvoir)
+        public void SupprimerPouvoir(string pouvoir)
         {
             if (!this.Pouvoirs.Contains(pouvoir)) this.Pouvoirs.Remove(pouvoir);
         }
@@ -61,7 +65,7 @@ namespace Projet_Zombi
         public void AfficherPouvoir()
         {
             Console.Write("\n|");
-            foreach ( Pouvoir p in Pouvoirs )
+            foreach ( string p in Pouvoirs )
             {
                 Console.Write(p.ToString() + "|");
             }

@@ -14,6 +14,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public LoupGarou()
+        {
+
+        }
         public LoupGarou(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, double indiceCruaute)
             : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {

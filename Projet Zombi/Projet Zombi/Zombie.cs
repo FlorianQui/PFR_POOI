@@ -15,6 +15,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public Zombie()
+        {
+
+        }
         public Zombie(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, int degreDecomposition, CouleurZombie couleurZombie)
             : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {

@@ -15,18 +15,17 @@ namespace Projet_Zombi
         {
             Parc parc = new Parc("Hello", "18 r", "peur", 20000);
 
-            Monstre m1 = new Monstre("ok", "kk", Sexe.masculin, "o", 99, null, 99);
-            Monstre m2 = new Monstre("aa", "kk", Sexe.masculin, "o", 99, null, 99);
+            //parc.TrierParClasseEtCritere(parc.Personnel.Employes, "Nom", OrdreTrie.ASC);
+            
 
-            parc.Personnel.Employes.Add(m1);
-            parc.Personnel.Employes.Add(m2);
-
-            parc.TrierParClasseEtCritere(parc.Personnel.Employes, "Nom", OrdreTrie.ASC);
-            parc.EcrireListeVersCSV(parc.Personnel.Employes);
 
             parc.PeuplementCSV();
 
-            parc.Personnel.AfficherListePersonnel();
+            //parc.Personnel.AfficherListePersonnel();
+
+            parc.EcrireListeVersCSV(parc.Personnel.Employes);
+
+            parc.AfficherListe(parc.ListeParClasse(parc.Personnel.Employes, "Demon"));
 
             Console.ReadKey();
         }

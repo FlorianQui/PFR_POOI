@@ -14,6 +14,10 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
+        public Boutique()
+        {
+
+        }
         public Boutique(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, TypeBoutique typeBoutique)
         {
             this.Nom = nom;

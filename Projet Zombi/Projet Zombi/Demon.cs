@@ -14,6 +14,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public Demon()
+        {
+
+        }
         public Demon(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, int force)
             : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {

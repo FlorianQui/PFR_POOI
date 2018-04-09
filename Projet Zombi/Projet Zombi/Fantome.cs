@@ -13,6 +13,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public Fantome()
+        {
+
+        }
         public Fantome(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte)
             : base(nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {

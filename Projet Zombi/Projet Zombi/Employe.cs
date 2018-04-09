@@ -37,9 +37,9 @@ abstract class Employe : IComparable
 
         public override string ToString()
         {
-            string result = "L'employe du personnel : ";
+            string result = "<" + this.GetType().Name + "> " + "L'employe du personnel : ";
 
-            if ( Sexe == Sexe.masculin )
+            if ( Sexe == Sexe.male )
             {
                 result += "Monsieur ";
             }

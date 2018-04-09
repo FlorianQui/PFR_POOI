@@ -33,6 +33,7 @@ namespace Projet_Zombi
             personnel = new Personnel();
         }
 
+
         ///Accesseurs
         ///
         public string Nom { get => nom; set => nom = value; }
@@ -54,11 +55,6 @@ namespace Projet_Zombi
                 Direction.Add(employe);
                 result = true;
             }
-
-            Direction.Sort((Employe e1, Employe e2) =>
-            {
-                return e1.Nom.CompareTo(e2.Nom);
-            });
 
             return result;
         }
@@ -86,11 +82,6 @@ namespace Projet_Zombi
                 result = true;
             }
 
-            personnel.Employes.Sort((Employe e1, Employe e2) =>
-            {
-                return e1.Nom.CompareTo(e2.Nom);
-            });
-
             return result;
         }
 
@@ -111,7 +102,7 @@ namespace Projet_Zombi
             if (monstre.Cagnotte < 50 && monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini)
             {
                 monstre.Affectation = null;
-                monstre.Affectation = ListeAttraction.Find(attraction => attraction.Nom == "BarbeAPapa");
+                monstre.Affectation = ListeAttraction.Find(attraction  => attraction.Nom == "Barbe Noire");
             }
             if (monstre.Cagnotte > 500 && (monstre is Demon || monstre is Zombie) && (monstre.Affectation.Equipe.Count() > monstre.Affectation.NbMonstreMini))
             {
@@ -136,9 +127,29 @@ namespace Projet_Zombi
 
         //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
 
+        public void AfficherListe<T> (List<T> liste)
+        {
+            foreach( T t in liste )
+            {
+                Console.WriteLine(t.ToString());
+            }
+        }
+        public List<T> ListeParClasse<T> (List<T> liste, string classe)
+        {
+            Type type = Type.GetType("Projet_Zombi." + classe);
 
+            if (type != null)
+            {
+                List<T> result = new List<T>();
+                foreach (T t in liste.FindAll(t => t.GetType() == type))
+                    result.Add(t); //TODO
 
-        public void TrierParClasseEtCritere<T>(List<T> liste, string critere, OrdreTrie ordreTrie) where T : IComparable
+                return result;
+            }
+            else return null;
+        }
+
+        public void TrierParCritere<T> (List<T> liste, string critere, OrdreTrie ordreTrie) where T : IComparable
         {
             try
             {
@@ -160,7 +171,7 @@ namespace Projet_Zombi
 
         public void EcrireListeVersCSV<T>(List<T> liste)
         {
-            using (StreamWriter writer = new StreamWriter("[" + typeof(T).Name + "]" + ".txt"))
+            using (StreamWriter writer = new StreamWriter("[" + typeof(T).Name + "]" + ".csv"))
             {
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
                     writer.Write(descriptor.Name + ";");
@@ -181,13 +192,12 @@ namespace Projet_Zombi
         {
             try
             {
-                StreamReader reader = new StreamReader("Feuil1.csv");
+                StreamReader reader = new StreamReader("Listing.txt");
 
                 while (!reader.EndOfStream)
                 {
                     string[] line = reader.ReadLine().Split(';');
-
-                    Peuplement(line);
+                    PremierPeuplement(line);
                 }
             }
             catch (FileNotFoundException err)
@@ -197,7 +207,7 @@ namespace Projet_Zombi
             }
         }
 
-        public void Peuplement(string[] line)
+        public void PremierPeuplement(string[] line)
         {
             try
             {
@@ -205,12 +215,82 @@ namespace Projet_Zombi
 
                 if (type != null)
                 {
-                    object obj = Activator.CreateInstance(type, new object[] { "nom", null, null, null, null, null, null });
+                    try
+                    {
+                        dynamic obj = Activator.CreateInstance(type);
 
-                    this.Personnel.Employes.Add(obj as ty);
+                        if (obj is Attraction)
+                        {
+                            obj.Identifiant = int.Parse(line[1]);
+                            obj.Nom = line[2];
+                            obj.NbMonstreMini = int.Parse(line[3]);
+                            obj.BesoinSpecifique = bool.Parse(line[4]);
+                            obj.TypeBesoin = line[5];
+
+                            if (obj is Boutique) if (line[6] != null) obj.TypeBoutique = ChoixTypeBoutique(line[6]);
+                            if (obj is DarkRide) obj.Vehicule = bool.Parse(line[7]); //TODO duree timespan
+                            if (obj is RollerCoaster) if (line[6] != null)
+                                {
+                                    obj.TypeCategorie = ChoixTypeCategorie(line[6]);
+                                    obj.AgeMini = int.Parse(line[7]);
+                                    obj.TailleMini = float.Parse(line[8]);
+                                }
+                            if (obj is Spectacle)
+                            {
+                                obj.NbPlaces = int.Parse(line[7]);
+                                obj.Salle = new Salle(line[6], obj.NbPlaces);
+                                //TODO horaire reservation
+                            }
+
+                            AjoutAttraction(obj);
+                        }
+                        else
+                        {
+                            obj.Matricule = int.Parse(line[1]);
+                            obj.Nom = line[2];
+                            obj.Prenom = line[3];
+                            if (line[4] != null) obj.Sexe = ChoixSexe(line[4]);
+                            obj.FonctionDansEntreprise = line[5];
+
+                            if (!(obj is Sorcier))
+                            {
+                                obj.Cagnotte = int.Parse(line[6]);
+                                //TODO if (line[7] != null) obj.Affectation = this.ListeAttraction.Find(attraction => attraction.Identifiant == int.Parse(line[7]));
+
+                                if (obj is Demon) obj.Force = int.Parse(line[8]);
+                                if (obj is LoupGarou) obj.IndiceCruaute = double.Parse(line[8]);
+                                if (obj is Vampire) obj.IndiceLuminosite = double.Parse(line[8]);
+                                if (obj is Zombie)
+                                {
+                                    obj.DegreDecomposition = int.Parse(line[9]);
+                                    if (line[8] != null) obj.CouleurZombie = ChoixCouleurZombie(line[8]);
+                                }
+                            }
+
+
+
+                            if (obj is Sorcier)
+                            {
+                                if (line[7] != null)
+                                {
+                                    string[] pouvoir = line[7].Split('-');
+                                    foreach (string s in pouvoir) obj.Pouvoirs.Add(s);
+                                }
+
+                            }
+
+
+                            AjouterEmployeDuPersonnel(obj);
+                        }
+                    }
+                    catch (MissingMethodException err)
+                    {
+                        err = new MissingMethodException();
+                        Console.WriteLine(err.Message + " Type " + type.Name);
+                    }
                 }
 
-                
+
             }
             catch (NullReferenceException)
             {
@@ -218,15 +298,25 @@ namespace Projet_Zombi
             }
         }
 
-        public static I CreateInstance<I>() where I : class
+        public Sexe ChoixSexe(string line)
         {
-            string assemblyPath = Environment.CurrentDirectory + "\\DynamicCreateInstanceofclass.exe";
-
-            Assembly assembly;
-
-            assembly = Assembly.LoadFrom(assemblyPath);
-            Type type = assembly.GetType("DynamicCreateInstanceofclass.UserDetails");
-            return Activator.CreateInstance(type) as I;
+            line.ToLower();
+            return line == "male" ? Sexe.male : line == "femelle" ? Sexe.femelle : Sexe.autre;
+        }
+        public CouleurZombie ChoixCouleurZombie(string line)
+        {
+            line.ToLower();
+            return line == "bleuatre" ? CouleurZombie.bleuatre : CouleurZombie.grisatre;
+        }
+        public TypeBoutique ChoixTypeBoutique(string line)
+        {
+            line.ToLower();
+            return line == "barbreapapa" ? TypeBoutique.barbeAPapa : line == "nourriture" ? TypeBoutique.nourriture : TypeBoutique.souvenir;
+        }
+        public TypeCategorie ChoixTypeCategorie(string line)
+        {
+            line.ToLower();
+            return line == "assise" ? TypeCategorie.assise : line == "bobsleigh" ? TypeCategorie.bobsleigh : TypeCategorie.inverse;
         }
 
         ///ToString

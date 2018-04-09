@@ -15,6 +15,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public DarkRide()
+        {
+
+        }
         public DarkRide(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, TimeSpan duree, bool vehicule)
         {
             this.Nom = nom;

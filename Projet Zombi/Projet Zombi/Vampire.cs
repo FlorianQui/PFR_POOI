@@ -14,6 +14,10 @@ namespace Projet_Zombi
 
         ///Constructeurs
         ///
+        public Vampire()
+        {
+
+        }
         public Vampire(string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, int matricule, Attraction affectation, int cagnotte, double indiceLuminosite) 
             : base (nom, prenom, sexe, fonctionDansEntreprise, matricule, affectation, cagnotte)
         {

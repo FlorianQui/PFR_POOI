@@ -16,6 +16,10 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
+        public Spectacle()
+        {
+
+        }
         public Spectacle(string nom, string typeDeBesoin, int identifiant, int nbMonstreMini, Salle salle, Reservation horaire, int nbPlaces)
         {
             this.Nom = nom;

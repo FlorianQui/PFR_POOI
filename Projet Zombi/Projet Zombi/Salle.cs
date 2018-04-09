@@ -17,7 +17,10 @@ namespace Projet_Zombi
 
         ///Constructeur
         ///
+        public Salle()
+        {
 
+        }
         public Salle(string nom, int nbPlaces)
         {
             this.Nom = nom;
