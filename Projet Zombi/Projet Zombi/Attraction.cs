@@ -84,14 +84,14 @@ namespace Projet_Zombi
 
         public override string ToString()
         {
-            string result ="[" + this.GetType() + "]";
-            if (enService == true)
+            string result ="<" + this.GetType().Name + ">";
+            if (EnService == true)
             {
-                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " est actuellement en service et a fait : " + nbEntrees + " entrés.";
+                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " est actuellement en service et a fait : " + NbEntrees + " entrés.";
             }
-            if(enService == false)
+            if(EnMaintenance == true )
             {
-                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible mais a fait : " + nbEntrees + " entrés.";
+                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible car elle est en maintenance, pour motif" + TypeMaintenance;
             }
             return result;
         }

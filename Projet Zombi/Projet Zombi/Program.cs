@@ -63,7 +63,10 @@ namespace Projet_Zombi
 
             //4
             Console.WriteLine("Trier liste des attractions en Maintenance par ordre croissant");
-            parc.TrierParCritere(parc.ListeAttraction, "enMaintenance", OrdreTrie.ASC);
+            Console.WriteLine("Mise en maintenance d'une attraction pour motif revision");
+            rollerCoaster.Mettre_Attraction_En_Maintenance("revision");
+
+            parc.TrierParCritere(parc.ListeAttraction, "EnMaintenance", OrdreTrie.ASC);
             parc.AfficherListe(parc.ListeAttraction);
 
             Console.ReadKey();
@@ -76,8 +79,12 @@ namespace Projet_Zombi
             Console.Clear();
 
             Console.WriteLine("Affichage liste zombie en fonction de leur cagnotte par ordre croissant");
-            List<Employe> list = parc.TrierParClasseEtCritere(parc.Personnel.Employes, "Zombie", "Cagnotte", OrdreTrie.ASC);
-            parc.AfficherListe(list);
+            List<Employe> list = parc.ListeParClasse(parc.Personnel.Employes, "Zombie");
+            var query = from x in list
+                        orderby ((Monstre)x).Cagnotte
+                        select x;
+
+            parc.AfficherListe(query.ToList());
 
             Console.ReadKey();
             Console.Clear();

@@ -10,8 +10,8 @@ namespace Projet_Zombi
     {
         ///Attributs
         ///
-        Attraction affectation;
-        int cagnotte;
+        protected Attraction affectation;
+        protected int cagnotte;
 
         ///Constructeurs
         ///
