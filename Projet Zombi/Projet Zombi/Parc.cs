@@ -179,7 +179,7 @@ namespace Projet_Zombi
             return result;
         }
 
-        public List<T> Query<T>(List<T> liste, string critere, dynamic value ) 
+        public List<T> Query<T> (List<T> liste, string critere, dynamic value ) 
         {
             var query = from T t in liste
                         where typeof(T).GetProperty(critere).GetValue(t).Equals(value)
@@ -189,13 +189,9 @@ namespace Projet_Zombi
 
         public void EcrireListeVersCSV<T>(List<T> liste)
         {
+            Console.WriteLine("Starting write to csv ...");
             using (StreamWriter writer = new StreamWriter(typeof(T).Name + ".csv"))
-            {
-                /*foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(T)))
-                    writer.Write(descriptor.Name + ";");
-
-                writer.WriteLine();*/
-
+            { 
                 foreach (T t in liste)
                 {
                     writer.Write(t.GetType().Name + ";");
@@ -209,6 +205,7 @@ namespace Projet_Zombi
         }
         public void PeuplementCSV()
         {
+            Console.WriteLine("Starting peuplement via csv");
             try
             {
                 StreamReader reader = new StreamReader("Listing.csv");

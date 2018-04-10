@@ -17,39 +17,76 @@ namespace Projet_Zombi
             Parc parc = new Parc("Hello", "18 r", "peur", 20000);
 
             //1
+            Console.WriteLine("Peulplement via csv");
             parc.PeuplementCSV();
-            
-
-            //2
-            //parc.AjouterEmployeDuPersonnel(new Demon() );
-
-            //3
-            //Zombie z = (Zombie) parc.Personnel.Employes.Find(x => x.Nom == "Cabanis");
-            //z.ChangerDegreDecomposition(3);
-            //Console.WriteLine(z.ToString());
-            //RollerCoaster rollerCoaster = (RollerCoaster)parc.ListeAttraction[3];
-            //parc.ListeAttraction[3].Mettre_Attraction_En_Maintenance("revision");
-
-            //Console.WriteLine(parc.ListeAttraction[3].ToString());
-
-             //parc.ListeAttraction[3].Mettre_Attraction_En_Service();
-            //Console.WriteLine(parc.ListeAttraction[3].ToString());
-
-            //4
-            
-            Console.WriteLine();
-            //parc.TrierParCritere(parc.ListeAttraction, "enMaintenance", OrdreTrie.ASC);
-            //parc.AfficherListe( parc.ListeAttraction);
-
-            List<Attraction> list = parc.Query(parc.ListeAttraction, "NbEntrees", 0);
-
-            parc.AfficherListe(list);
-            
-            parc.EcrireListeVersCSV(parc.Personnel.Employes);
-
-            parc.
 
             Console.ReadKey();
+            Console.Clear();
+
+            //2
+            Console.WriteLine("Ajout d'un Demon");
+            Demon d = new Demon("Robic", "Gaetan", Sexe.autre, "ok", 19, null, 0, 0);
+            parc.AjouterEmployeDuPersonnel(d);
+            Console.WriteLine("Ajout d'un RollerCoaster");
+            RollerCoaster r = new RollerCoaster("Robic", "r", 10, 10, 10, 10, TypeCategorie.bobsleigh);
+            parc.AjoutAttraction(r);
+
+            Console.ReadKey();
+            Console.Clear();
+
+            //3
+            Console.WriteLine("Recherche d'un zombie dont le nom est Cabanis");
+            Zombie z = (Zombie) parc.Personnel.Employes.Find(zombie => zombie.Nom == "Cabanis");
+            Console.WriteLine(z.ToString());
+            Console.WriteLine("Changement de son degre de decomposition en 3");
+            z.ChangerDegreDecomposition(3);
+            Console.WriteLine(z.ToString());
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Mise en maintenance d'une attraction pour motif revision");
+            RollerCoaster rollerCoaster = (RollerCoaster) parc.ListeAttraction[3];
+            rollerCoaster.Mettre_Attraction_En_Maintenance("revision");
+            Console.WriteLine(parc.ListeAttraction[3].ToString());
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Mise en service d'une attraction");
+            parc.ListeAttraction[3].Mettre_Attraction_En_Service();
+            Console.WriteLine(parc.ListeAttraction[3].ToString());
+
+            Console.ReadKey();
+            Console.Clear();
+
+
+            //4
+            Console.WriteLine("Trier liste des attractions en Maintenance par ordre croissant");
+            parc.TrierParCritere(parc.ListeAttraction, "enMaintenance", OrdreTrie.ASC);
+            parc.AfficherListe(parc.ListeAttraction);
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Affichage liste des monstres");
+            parc.AfficherListe(parc.ListeParClasse(parc.Personnel.Employes, "Monstre"));
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Affichage liste zombie en fonction de leur cagnotte par ordre croissant");
+            List<Employe> list = parc.TrierParClasseEtCritere(parc.Personnel.Employes, "Zombie", "Cagnotte", OrdreTrie.ASC);
+            parc.AfficherListe(list);
+
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Ecrire la liste des monstres dans un csv");
+            parc.EcrireListeVersCSV(parc.ListeParClasse(parc.Personnel.Employes, "Fantome"));
+
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }  
