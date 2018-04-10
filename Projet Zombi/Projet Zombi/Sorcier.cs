@@ -20,7 +20,7 @@ namespace Projet_Zombi
         {
             this.Pouvoirs = new List<string>();
         }
-        public Sorcier(Grade tatouage, List<string> pouvoirs, int matricule, string nom, string prenom, Sexe sexe, string fonctionDansEntreprise,  Grade tatouag, List<string> pouvoir) 
+        public Sorcier(Grade tatouage, List<string> pouvoirs, int matricule, string nom, string prenom, Sexe sexe, string fonctionDansEntreprise, List<string> pouvoir) 
         {
             this.Nom = nom;
             this.Prenom = prenom;
@@ -28,7 +28,7 @@ namespace Projet_Zombi
             this.FonctionDansEntreprise = fonctionDansEntreprise;
             this.Matricule = matricule;
 
-            this.Tatouage = tatouag;
+            this.Tatouage = tatouage;
             this.Pouvoirs = pouvoir;
         }
 
