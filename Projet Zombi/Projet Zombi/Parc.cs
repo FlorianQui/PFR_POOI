@@ -271,8 +271,8 @@ namespace Projet_Zombi
                             if (!(obj is Sorcier))
                             {
                                 obj.Cagnotte = int.Parse(line[6]);
-                                //TODO if (line[7] != null) obj.Affectation = this.ListeAttraction.Find(attraction => attraction.Identifiant == int.Parse(line[7]));
-
+                                // if (line[7] != null) obj.Affectation = this.ListeAttraction.Find(attraction => attraction.Identifiant == int.Parse(line[7]));
+                                
                                 if (obj is Demon) obj.Force = int.Parse(line[8]);
                                 if (obj is LoupGarou) obj.IndiceCruaute = double.Parse(line[8]);
                                 if (obj is Vampire) obj.IndiceLuminosite = double.Parse(line[8]);

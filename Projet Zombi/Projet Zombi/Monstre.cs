@@ -46,7 +46,7 @@ namespace Projet_Zombi
         public override string ToString()
         {
             string result = "";
-            result = base.ToString() + " a pour affectation " + affectation + " et a une cagnotte de :" + cagnotte;
+            result = base.ToString()  + " a " + cagnotte +" points dans sa cagnotte ";
             return result;
 
         }

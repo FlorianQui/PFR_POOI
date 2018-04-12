@@ -52,7 +52,7 @@ namespace Projet_Zombi
 
             result += Nom.ToUpper() + " " + prenom +
                         " travaille comme " + FonctionDansEntreprise +
-                        " : Matricule || " + Matricule;
+                        " : Matricule | " + Matricule + " |";
 
             return result;
         }

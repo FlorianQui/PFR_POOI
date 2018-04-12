@@ -91,7 +91,7 @@ namespace Projet_Zombi
             }
             if(EnMaintenance == true )
             {
-                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible car elle est en maintenance, pour motif" + TypeMaintenance;
+                result = "L'attraction " + nom + " avec l'identifiant " + identifiant + " n'est pas disponible car elle est en maintenance avec pour motif : " +TypeMaintenance;
             }
             return result;
         }
