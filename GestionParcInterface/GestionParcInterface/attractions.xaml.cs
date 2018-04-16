@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour attractions.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class attractions : UserControl
     {
-        public MainWindow()
+        public attractions()
         {
             InitializeComponent();
-        }
-
-        private void button_attractions_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
