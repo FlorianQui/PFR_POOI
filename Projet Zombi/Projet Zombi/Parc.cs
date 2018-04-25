@@ -120,13 +120,7 @@ namespace Projet_Zombi
             }
             return result;
         }
-        //TODO gaetan lire csv pour ajouter membres
 
-        //TODO gaetan afficher membres direction et personnel
-
-        //TODO florian evoluer personnel et attractions ( 2 methodes != ) !!!!!!!! a implementer dans chaque classes !!!!!!!!
-
-        //TODO remplacer la personne qui est affectée a la barbe a papa qd il y a pas assez de personne ds l'attraction
 
         public void AfficherListe<T>(List<T> liste)
         {
