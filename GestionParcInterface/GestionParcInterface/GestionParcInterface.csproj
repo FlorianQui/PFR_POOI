@@ -63,6 +63,12 @@
     <Compile Include="attractions.xaml.cs">
       <DependentUpon>attractions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="parcs.xaml.cs">
+      <DependentUpon>parcs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="personnels.xaml.cs">
+      <DependentUpon>personnels.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="RollerCoaster.cs" />
     <Compile Include="Salle.cs" />
@@ -71,6 +77,10 @@
     <Compile Include="Vampire.cs" />
     <Compile Include="Zombie.cs" />
     <Page Include="attractions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="parcs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="personnels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Monstre.cs" />

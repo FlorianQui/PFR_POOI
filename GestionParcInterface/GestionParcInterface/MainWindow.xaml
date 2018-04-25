@@ -35,7 +35,9 @@
         </StackPanel>
         <StackPanel Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
 
-            <local:attractions Panel.ZIndex="1"/>
+            <local:personnels Panel.ZIndex="1"/>
+
+
 
         </StackPanel>
     </DockPanel>
