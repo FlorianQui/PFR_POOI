@@ -60,8 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AffichagePersonnel.xaml.cs">
+      <DependentUpon>AffichagePersonnel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="attractions.xaml.cs">
       <DependentUpon>attractions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="hello.xaml.cs">
+      <DependentUpon>hello.xaml</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="RollerCoaster.cs" />
@@ -70,7 +76,15 @@
     <Compile Include="Spectacle.cs" />
     <Compile Include="Vampire.cs" />
     <Compile Include="Zombie.cs" />
+    <Page Include="AffichagePersonnel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="attractions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="hello.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,39 +16,25 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour AffichagePersonnel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AffichagePersonnel : UserControl
     {
-        public MainWindow()
+        public AffichagePersonnel()
         {
             //InitializeComponent();
-            gridd = new Grid();
-            gridd.ShowGridLines = true;
+            GridAffichage = new Grid();
+            GridAffichage.ShowGridLines = true;
 
             for (int i = 0; i < typeof(Parc).GetProperties().Length; i++)
             {
                 ColumnDefinition col = new ColumnDefinition();
-                gridd.ColumnDefinitions.Add(col);
+                GridAffichage.ColumnDefinitions.Add(col);
             }
 
             RowDefinition rowDef1 = new RowDefinition();
-            gridd.RowDefinitions.Add(rowDef1);
-
-            TextBlock txt1 = new TextBlock();
-            txt1.Text = "2005 Products Shipped";
-            txt1.FontSize = 20;
-            txt1.FontWeight = FontWeights.Bold;
-            Grid.SetColumnSpan(txt1, 3);
-            Grid.SetRow(txt1, 0);
-
-            gridd.Children.Add(txt1);
-            
+            GridAffichage.RowDefinitions.Add(rowDef1);
         }
 
-        private void button_attractions_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

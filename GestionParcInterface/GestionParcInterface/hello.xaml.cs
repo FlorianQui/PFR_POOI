@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour attractions.xaml
+    /// Logique d'interaction pour hello.xaml
     /// </summary>
-    public partial class attractions : UserControl
+    public partial class hello : UserControl
     {
-        public attractions()
+        public hello()
         {
             InitializeComponent();
-        }
-
-        private void click_attractions(object sender, RoutedEventArgs e)
-        {
-            ok.Content = "hh";
-            dk.Background = Brushes.Black;
         }
     }
 }

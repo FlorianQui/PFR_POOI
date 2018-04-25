@@ -5,10 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d" >
-    <DockPanel Height="553.6" Width="904.8" Background="White">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="200" DockPanel.Dock="Left">
-            <Button Content="Afficher liste attractions"/>
+    <DockPanel Name="dk" Height="553.6" Width="904.8" Background="Blue">
+        <StackPanel Height="auto" HorizontalAlignment="Left" Width="200" DockPanel.Dock="Left" Background="Chocolate">
+            <Button Name="ok" Content="Afficher liste attractions" Click="click_attractions"/>
         </StackPanel>
+        <RadioButton Height="553.6" VerticalAlignment="Top">
+            <Expander Header="Expander" Height="100" Width="100">
+                <Grid Background="#FFE5E5E5"/>
+            </Expander>
+        </RadioButton>
 
     </DockPanel>
 </UserControl>
