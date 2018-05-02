@@ -33,17 +33,11 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-<<<<<<< HEAD
         <StackPanel Name ="control" Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
             <Grid Name="gridd"/>
-=======
-        <StackPanel Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
-
-            <local:personnels Panel.ZIndex="1"/>
-
-
-
->>>>>>> da85a0bb22726ae112cd1c6105cdd5742c01dc9c
+            <StackPanel Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
+                <local:personnels Panel.ZIndex="1"/>
+            </StackPanel>
         </StackPanel>
     </DockPanel>
 </Window>

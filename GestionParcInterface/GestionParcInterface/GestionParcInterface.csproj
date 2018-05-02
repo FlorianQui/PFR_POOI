@@ -66,16 +66,14 @@
     <Compile Include="attractions.xaml.cs">
       <DependentUpon>attractions.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="hello.xaml.cs">
       <DependentUpon>hello.xaml</DependentUpon>
-=======
+	</Compile>
     <Compile Include="parcs.xaml.cs">
       <DependentUpon>parcs.xaml</DependentUpon>
     </Compile>
     <Compile Include="personnels.xaml.cs">
       <DependentUpon>personnels.xaml</DependentUpon>
->>>>>>> da85a0bb22726ae112cd1c6105cdd5742c01dc9c
     </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="RollerCoaster.cs" />
@@ -92,11 +90,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
-    <Page Include="hello.xaml">
-=======
+    <Page Include="hello.xaml"/>
     <Page Include="parcs.xaml">
->>>>>>> da85a0bb22726ae112cd1c6105cdd5742c01dc9c
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
