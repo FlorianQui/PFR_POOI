@@ -63,12 +63,18 @@
     <Compile Include="AffichagePersonnel.xaml.cs">
       <DependentUpon>AffichagePersonnel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ajout_personnel.xaml.cs">
+      <DependentUpon>Ajout_personnel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="attractions.xaml.cs">
       <DependentUpon>attractions.xaml</DependentUpon>
     </Compile>
     <Compile Include="hello.xaml.cs">
       <DependentUpon>hello.xaml</DependentUpon>
-	</Compile>
+    </Compile>
+    <Compile Include="importercsvs.xaml.cs">
+      <DependentUpon>importercsvs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="parcs.xaml.cs">
       <DependentUpon>parcs.xaml</DependentUpon>
     </Compile>
@@ -80,9 +86,16 @@
     <Compile Include="Salle.cs" />
     <Compile Include="Sorcier.cs" />
     <Compile Include="Spectacle.cs" />
+    <Compile Include="test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vampire.cs" />
     <Compile Include="Zombie.cs" />
     <Page Include="AffichagePersonnel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ajout_personnel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,7 +103,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="hello.xaml"/>
+    <Page Include="hello.xaml" />
+    <Page Include="importercsvs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="parcs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +133,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="personnels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

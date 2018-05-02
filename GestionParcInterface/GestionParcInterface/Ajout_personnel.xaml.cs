@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour attractions.xaml
+    /// Logique d'interaction pour Ajout_personnel.xaml
     /// </summary>
-    public partial class attractions : UserControl
+    public partial class Ajout_personnel : UserControl
     {
-        public attractions()
+        public Ajout_personnel()
         {
             InitializeComponent();
-        }
-
-        private void click_attractions(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

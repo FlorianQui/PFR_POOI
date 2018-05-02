@@ -4,16 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d" >
-    <DockPanel Name="dk" Height="553.6" Width="904.8" Background="Blue">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="200" DockPanel.Dock="Left" Background="Chocolate">
-            <Button Name="ok" Content="Afficher liste attractions" Click="click_attractions"/>
-        </StackPanel>
-        <RadioButton Height="553.6" VerticalAlignment="Top">
-            <Expander Header="Expander" Height="100" Width="100">
-                <Grid Background="#FFE5E5E5"/>
+             mc:Ignorable="d" 
+             d:DesignHeight="553.6" d:DesignWidth="904.8">
+    <DockPanel Name="attraction_Dock" Height="553.6" Width="auto" Background="Gray">
+        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
+            <Button Content="Afficher liste attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
+            <Button Content="Ajouter une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210" Margin="-1,0,0,0"/>
+            <Button Content="Supprimer une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
+            <Expander Header="Informations sur une Boutique" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left"  >
+                <StackPanel>
+                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"  />
+                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Type de boutique" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                </StackPanel>
             </Expander>
-        </RadioButton>
-
+            <Expander Header="Informations sur un DarkRide" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left"   >
+                <StackPanel>
+                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" />
+                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Type de véhicule" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="Durée de l'attraction" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                </StackPanel>
+            </Expander>
+            <Expander Header="Informations sur un RollerCoaster" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
+                <StackPanel>
+                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Âge et taille mini " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="Type d'attraction" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                </StackPanel>
+            </Expander>
+            <Expander Header="Informations sur un Spectacle" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
+                <StackPanel>
+                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Nom de la salle" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="Nombre de places" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                </StackPanel>
+            </Expander>
+    
+        </StackPanel>
     </DockPanel>
 </UserControl>

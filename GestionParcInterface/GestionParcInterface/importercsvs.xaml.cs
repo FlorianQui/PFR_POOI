@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour attractions.xaml
+    /// Logique d'interaction pour importercsvs.xaml
     /// </summary>
-    public partial class attractions : UserControl
+    public partial class importercsvs : UserControl
     {
-        public attractions()
+        public importercsvs()
         {
             InitializeComponent();
-        }
-
-        private void click_attractions(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

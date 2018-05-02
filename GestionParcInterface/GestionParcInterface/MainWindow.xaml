@@ -36,7 +36,7 @@
         <StackPanel Name ="control" Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
             <Grid Name="gridd"/>
             <StackPanel Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
-                <local:personnels Panel.ZIndex="1"/>
+                <local:personnels Panel.ZIndex="1" Loaded="attractions_Loaded"/>
             </StackPanel>
         </StackPanel>
     </DockPanel>

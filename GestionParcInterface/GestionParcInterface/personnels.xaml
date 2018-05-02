@@ -6,35 +6,38 @@
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d" 
              d:DesignHeight="553.6" d:DesignWidth="904.8">
-      <DockPanel Name="direction_Dock" Height="553.6" Width="auto" Background="Gray">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="200" DockPanel.Dock="Left" Background="LightGray">
-            <Button Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"/>
-            <Expander Header="Accès à une liste spécifique" Width="auto" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
+      <DockPanel Name="personnel_Dock" Height="553.6" Width="auto" Background="Gray">
+        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
+            <Button Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Button Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Button Content="Suppression d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Button Content="Recherche d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Expander Header="Accès à une liste spécifique" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" Margin="0,0,-0.4,0" >
                 <StackPanel >
-                    <Button Content="Liste Sorciers" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Monstres" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Vampires" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Démons" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Fantômes" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Zombies" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="Liste Loups-garou" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
+                    <Button Content="Liste Sorciers" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Monstres" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Vampires" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Démons" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Fantômes" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Zombies" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="Liste Loups-garou" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
                 </StackPanel>
             </Expander>
-            <Button Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"/>
-            <Button Content="Suppression d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"/>
-            <Button Content="Recherche d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"/>
-            <Expander Header="Faire une modification" Width="auto" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
+            <Expander Header="Faire une modification" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
                 <StackPanel >
-                    <Button Content="sur la cagnotte " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="sur l'indice luminosité " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="sur la force " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="sur la décomposition " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
-                    <Button Content="sur la cruauté " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" Width="198"/>
+                    <Button Content="sur la cagnotte " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="sur l'indice luminosité " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="sur la force " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
+                    <Button Content="sur la décomposition " BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
+                    <Button Content="sur la cruauté " BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
                     <TextBlock TextWrapping="Wrap" Text="Attention à ce que la modification soit possible !" Background="Red"/>
                 </StackPanel>
             </Expander>
         </StackPanel>
-
+        <StackPanel DockPanel.Dock="Right">
+            <local:Ajout_personnel/>
+         
+        </StackPanel>
     </DockPanel>
         
 </UserControl>

@@ -50,5 +50,10 @@ namespace GestionParcInterface
         {
 
         }
+
+        private void attractions_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
