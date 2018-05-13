@@ -22,6 +22,7 @@ namespace Projet_Zombi
             parc.PeuplementCSV();
 
             Console.ReadKey();
+
             Console.Clear();
 
             //2
