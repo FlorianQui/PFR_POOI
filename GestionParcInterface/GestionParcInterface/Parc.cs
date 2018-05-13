@@ -7,6 +7,7 @@ using System.IO;
 using System.ComponentModel;
 using System.Reflection;
 using System.Xml.Serialization;
+using System.Diagnostics;
 
 namespace GestionParcInterface
 {
@@ -137,7 +138,7 @@ namespace GestionParcInterface
         }
         public List<T> ListeParClasse<T>(List<T> liste, string classe)
         {
-            Type type = Type.GetType("Projet_Zombi." + classe);
+            Type type = Type.GetType("GestionParcInterface." + classe);
 
             if (type != null)
             {
@@ -205,11 +206,11 @@ namespace GestionParcInterface
         }
         public void PeuplementCSV()
         {
-            Console.WriteLine("Starting peuplement via csv");
+            Debug.WriteLine("Starting peuplement via csv");
             try
             {
-                StreamReader reader = new StreamReader("Listing.csv");
-
+                StreamReader reader = new StreamReader("C:/Users/flori/Documents/GitHub/PFR_POOI/GestionParcInterface/GestionParcInterface/bin/Debug/Listing.csv");
+                
                 while (!reader.EndOfStream)
                 {
                     string[] line = reader.ReadLine().Split(';');
@@ -219,7 +220,7 @@ namespace GestionParcInterface
             catch (Exception err)
             {
                 //err = new FileNotFoundException();
-                Console.WriteLine(err.Message);
+                Debug.WriteLine(err.Message);
             }
         }
 
@@ -227,16 +228,18 @@ namespace GestionParcInterface
         {
             try
             {
-                Type type = Type.GetType("Projet_Zombi." + line[0]);
-
+                Type type = Type.GetType("GestionParcInterface." + line[0]);
+                Debug.WriteLine(type);
                 if (type != null)
                 {
+                    
                     try
                     {
                         dynamic obj = Activator.CreateInstance(type);
-
+                        
                         if (obj is Attraction)
                         {
+                            
                             obj.Identifiant = int.Parse(line[1]);
                             obj.Nom = line[2];
                             obj.NbMonstreMini = int.Parse(line[3]);
@@ -283,8 +286,6 @@ namespace GestionParcInterface
                                 }
                             }
 
-
-
                             if (obj is Sorcier)
                             {
                                 if (line[7] != null)
@@ -294,23 +295,20 @@ namespace GestionParcInterface
                                 }
 
                             }
-
-
+                            Debug.WriteLine("ajout");
                             AjouterEmployeDuPersonnel(obj);
                         }
                     }
                     catch (MissingMethodException err)
                     {
                         err = new MissingMethodException();
-                        Console.WriteLine(err.Message + " Type " + type.Name);
+                        Debug.WriteLine(err.Message + " Type " + type.Name);
                     }
                 }
-
-
             }
             catch (NullReferenceException)
             {
-                Console.WriteLine("Classe invalide");
+                Debug.WriteLine("Classe invalide");
             }
         }
 

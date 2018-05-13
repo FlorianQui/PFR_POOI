@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace GestionParcInterface
 {
-    abstract class Employe : IComparable
+    abstract class Employe : IComparable, INotifyPropertyChanged
     {
         ///Attributs
         ///
@@ -23,6 +24,8 @@ namespace GestionParcInterface
         public Sexe Sexe { get => sexe; set => sexe = value; }
         public string FonctionDansEntreprise { get => fonctionDansEntreprise; set => fonctionDansEntreprise = value; }
         public int Matricule { get => matricule; set => matricule = value; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public int CompareTo(object obj)
         {

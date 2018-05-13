@@ -8,7 +8,7 @@
         Title="Logiciel Zombilénium" Height="583.04" Width="1111.249" Topmost="True">
     <DockPanel Background="White">
         <StackPanel Width="200" HorizontalAlignment="Left" Margin="0,0,0,0.4" Background="#FF292728" DockPanel.Dock="Left">
-            <Button x:Name="button_home" Height="100" Padding="1" Margin="0,75,0,0" BorderBrush="{x:Null}" Background="#FF292728" HorizontalAlignment="Right" Width="200">
+            <Button x:Name="button_home" Height="100" Padding="1" Margin="0,75,0,0" BorderBrush="{x:Null}" Background="#FF292728" HorizontalAlignment="Right" Width="200" Click="button_home_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="30" Source="home.png" Stretch="Fill" Width="30"/>
                     <TextBlock Text="PARC" Width="100" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
@@ -20,24 +20,15 @@
                     <TextBlock Text="ATTRACTIONS" Width="100" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="button_personnel" Height="100" Padding="1" BorderBrush="{x:Null}" Background="#FF292728" HorizontalAlignment="Right" Width="200">
+            <Button x:Name="button_personnel" Height="100" Padding="1" BorderBrush="{x:Null}" Background="#FF292728" HorizontalAlignment="Right" Width="200" Click="button_personnel_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="30" Source="employee.png" Stretch="Fill" Width="30"/>
                     <TextBlock Text="PERSONNEL" Width="100" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="button_csv" Height="100" Padding="1" BorderBrush="{x:Null}" Background="#FF292728" HorizontalAlignment="Right" Width="200">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="30" Source="excel (1).png" Stretch="Fill" Width="30"/>
-                    <TextBlock Text="IMPORTER CSV" Width="100" TextAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
         </StackPanel>
         <StackPanel Name ="control" Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
-            <Grid Name="gridd"/>
-            <StackPanel Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
-                <local:personnels Panel.ZIndex="1" Loaded="attractions_Loaded"/>
-            </StackPanel>
+            <local:parc/>
         </StackPanel>
     </DockPanel>
 </Window>

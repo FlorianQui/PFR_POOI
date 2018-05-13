@@ -22,36 +22,26 @@ namespace GestionParcInterface
     {
         public MainWindow()
         {
-            //InitializeComponent();
-            gridd = new Grid();
-            gridd.ShowGridLines = true;
+            InitializeComponent();
+            Globals.Zombilenium.PeuplementCSV();
+        }
 
-            for (int i = 0; i < typeof(Parc).GetProperties().Length; i++)
-            {
-                ColumnDefinition col = new ColumnDefinition();
-                gridd.ColumnDefinitions.Add(col);
-            }
+        private void button_personnel_Click(object sender, RoutedEventArgs e)
+        {
+            personnels personnels = new personnels();
 
-            RowDefinition rowDef1 = new RowDefinition();
-            gridd.RowDefinitions.Add(rowDef1);
+            control.Children.Clear();
+            control.Children.Add(personnels);
+        }
 
-            TextBlock txt1 = new TextBlock();
-            txt1.Text = "2005 Products Shipped";
-            txt1.FontSize = 20;
-            txt1.FontWeight = FontWeights.Bold;
-            Grid.SetColumnSpan(txt1, 3);
-            Grid.SetRow(txt1, 0);
-
-            gridd.Children.Add(txt1);
-            
+        private void button_home_Click(object sender, RoutedEventArgs e)
+        {
+            parc parc = new parc();
+            control.Children.Clear();
+            control.Children.Add(parc);
         }
 
         private void button_attractions_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void attractions_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

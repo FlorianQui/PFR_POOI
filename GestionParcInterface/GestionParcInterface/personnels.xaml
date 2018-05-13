@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d" 
-             d:DesignHeight="553.6" d:DesignWidth="904.8">
+             mc:Ignorable="d">
       <DockPanel Name="personnel_Dock" Height="553.6" Width="auto" Background="Gray">
         <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
-            <Button Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Button Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="Button_Click"/>
             <Button Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
             <Button Content="Suppression d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
             <Button Content="Recherche d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
@@ -35,8 +34,32 @@
             </Expander>
         </StackPanel>
         <StackPanel DockPanel.Dock="Right">
-            <local:Ajout_personnel/>
-         
+            <TextBlock>Liste du personnel</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Name="button_sorcier" Content="Sorciers" Grid.Column="0" Click="button_sorcier_Click"/>
+                <Button Name="button_monstres" Content="Monstres" Grid.Column="1" Click="button_monstres_Click"/>
+                <Button Name="button_demons" Content="Démons" Grid.Column="2" Click="button_demons_Click"/>
+                <Button Name="button_fantomes" Content="Fantômes" Grid.Column="3" Click="button_fantomes_Click"/>
+                <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
+                <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
+            </Grid>
+            <ScrollViewer>
+                <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged">
+                
+                </DataGrid>
+            </ScrollViewer>
+            
+                
+            
         </StackPanel>
     </DockPanel>
         

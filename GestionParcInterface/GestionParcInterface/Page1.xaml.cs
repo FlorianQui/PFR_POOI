@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace GestionParcInterface
 {
     /// <summary>
-    /// Logique d'interaction pour direction.xaml
+    /// Logique d'interaction pour Page1.xaml
     /// </summary>
-    public partial class parc : UserControl
+    public partial class Page1 : Page
     {
-        public parc()
+        public Page1()
         {
             InitializeComponent();
         }

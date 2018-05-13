@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionParcInterface
 {
-    class Personnel
+    class Personnel : IEnumerable
     {
         ///Attributs
         ///
@@ -37,6 +38,12 @@ namespace GestionParcInterface
             }
             Console.Write(" <Personnel>");
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            return ((IEnumerable)employes).GetEnumerator();
+        }
+
         public override string ToString()
         {
             string result = "";
