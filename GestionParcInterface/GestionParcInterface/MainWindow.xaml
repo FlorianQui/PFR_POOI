@@ -28,7 +28,7 @@
             </Button>
         </StackPanel>
         <StackPanel Name ="control" Height="auto" Width="auto" DockPanel.Dock="Right" Background="White">
-            <local:parc/>
+            <local:parc Loaded="parc_Loaded"/>
         </StackPanel>
     </DockPanel>
 </Window>
