@@ -53,13 +53,13 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Button Name="button_boutique" Content="Boutiques" Grid.Column="0" Click="button_sorcier_Click"/>
-                <Button Name="button_darkride" Content="DarkRide" Grid.Column="1" Click="button_monstres_Click"/>
-                <Button Name="button_rollercoaster" Content="RollerCoaster" Grid.Column="2" Click="button_demons_Click"/>
-                <Button Name="button_spectable" Content="Spectable" Grid.Column="3" Click="button_fantomes_Click"/>
+                <Button Name="button_boutique" Content="Boutiques" Grid.Column="0" />
+                <Button Name="button_darkride" Content="DarkRide" Grid.Column="1"/>
+                <Button Name="button_rollercoaster" Content="RollerCoaster" Grid.Column="2" />
+                <Button Name="button_spectable" Content="Spectable" Grid.Column="3"/>
             </Grid>
             <ScrollViewer>
-                <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged">
+                <DataGrid Name="liste">
 
                 </DataGrid>
             </ScrollViewer>
