@@ -44,6 +44,7 @@ namespace GestionParcInterface
             Button validation = new Button();
             ajout.Children.Add(validation);
             //ajout.header
+            
         }
         private void button_monstres_Click(object sender, RoutedEventArgs e)
         {
