@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionParcInterface
 {
-    abstract class Attraction : IComparable, IEnumerable
+    abstract class Attraction : IComparable, IEnumerable, INotifyPropertyChanged
     {
         /////////////Vérifié 04-04-2018
 
@@ -34,6 +35,8 @@ namespace GestionParcInterface
         public bool BesoinSpecifique { get => besoinSpecifique; set => besoinSpecifique = value; }
         public TimeSpan DureeMaintenance { get => dureeMaintenance; set => dureeMaintenance = value; }
         internal List<Monstre> Equipe { get => equipe; set => equipe = value; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         ///Méthodes
         ///

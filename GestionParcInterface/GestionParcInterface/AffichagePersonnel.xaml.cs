@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,19 +24,55 @@ namespace GestionParcInterface
     {
         public AffichagePersonnel()
         {
-            //InitializeComponent();
-            GridAffichage = new Grid();
-            GridAffichage.ShowGridLines = true;
+            InitializeComponent();
+        }
+        private void button_sorcier_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Sorcier>().ToList();
+            button_recherche_classe.Text = " Sorcier";
 
-            for (int i = 0; i < typeof(Parc).GetProperties().Length; i++)
+
+            foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(Sorcier)))
             {
-                ColumnDefinition col = new ColumnDefinition();
-                GridAffichage.ColumnDefinitions.Add(col);
+                TextBlock textBlock = new TextBlock();
+                textBlock.Text = descriptor.Name;
+                combobox_research.Items.Add(textBlock);
             }
-
-            RowDefinition rowDef1 = new RowDefinition();
-            GridAffichage.RowDefinitions.Add(rowDef1);
         }
 
+        private void button_monstres_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Monstre>().ToList();
+            button_recherche_classe.Text = " Monstres";
+        }
+
+        private void button_demons_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Demon>().ToList();
+            button_recherche_classe.Text = " Démons";
+        }
+
+        private void button_zombies_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Zombie>().ToList();
+            button_recherche_classe.Text = " Zombie";
+        }
+
+        private void button_loup_garou_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<LoupGarou>().ToList();
+            button_recherche_classe.Text = " Loug-Garou";
+        }
+
+        private void button_fantomes_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Fantome>().ToList();
+            button_recherche_classe.Text = " Fantôme";
+        }
+
+        private void liste_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Debug.WriteLine(sender.GetType());
+        }
     }
 }

@@ -75,6 +75,9 @@
     <Compile Include="personnels.xaml.cs">
       <DependentUpon>personnels.xaml</DependentUpon>
     </Compile>
+    <Compile Include="recherche_personnel.xaml.cs">
+      <DependentUpon>recherche_personnel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="RollerCoaster.cs" />
     <Compile Include="Salle.cs" />
@@ -119,6 +122,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="personnels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="recherche_personnel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

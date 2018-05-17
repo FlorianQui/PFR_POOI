@@ -7,59 +7,13 @@
              mc:Ignorable="d">
       <DockPanel Name="personnel_Dock" Height="553.6" Width="auto" Background="Gray">
         <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
-            <Button Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="Button_Click"/>
-            <Button Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
+            <Button Name="button_affichage_personnels" Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="button_affichage_personnels_Click"/>
+            <Button Name="button_ajout_employe" Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="button_ajout_employe_Click"/>
             <Button Content="Suppression d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
             <Button Content="Recherche d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
-            <Expander Header="Accès à une liste spécifique" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" Margin="0,0,-0.4,0" >
-                <StackPanel >
-                    <Button Content="Liste Sorciers" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Monstres" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Vampires" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Démons" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Fantômes" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Zombies" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Liste Loups-garou" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                </StackPanel>
-            </Expander>
-            <Expander Header="Faire une modification" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
-                <StackPanel >
-                    <Button Content="sur la cagnotte " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="sur l'indice luminosité " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="sur la force " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="sur la décomposition " BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="sur la cruauté " BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <TextBlock TextWrapping="Wrap" Text="Attention à ce que la modification soit possible !" Background="Red"/>
-                </StackPanel>
-            </Expander>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right">
-            <TextBlock>Liste du personnel</TextBlock>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Button Name="button_sorcier" Content="Sorciers" Grid.Column="0" Click="button_sorcier_Click"/>
-                <Button Name="button_monstres" Content="Monstres" Grid.Column="1" Click="button_monstres_Click"/>
-                <Button Name="button_demons" Content="Démons" Grid.Column="2" Click="button_demons_Click"/>
-                <Button Name="button_fantomes" Content="Fantômes" Grid.Column="3" Click="button_fantomes_Click"/>
-                <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
-                <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
-            </Grid>
-            <ScrollViewer>
-                <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged">
-                
-                </DataGrid>
-            </ScrollViewer>
-            
-                
-            
+        <StackPanel Name="control" DockPanel.Dock="Right">
+            <local:AffichagePersonnel/>
         </StackPanel>
     </DockPanel>
         
