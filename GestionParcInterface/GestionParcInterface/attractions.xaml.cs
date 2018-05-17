@@ -27,7 +27,35 @@ namespace GestionParcInterface
 
         private void click_attractions(object sender, RoutedEventArgs e)
         {
-           
+            
+         //   liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Sorcier>().ToList();
+        }
+
+        private void button_boutique_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.ListeAttraction.OfType<Boutique>().ToList();
+        }
+
+        private void button_darkride_Click(object sender, RoutedEventArgs e)
+        {
+            liste.ItemsSource = Globals.Zombilenium.ListeAttraction.OfType<DarkRide>().ToList();
+        }
+
+        private void button_rollercoaster_Click(object sender, RoutedEventArgs e)
+        {
+
+            liste.ItemsSource = Globals.Zombilenium.ListeAttraction.OfType<RollerCoaster>().ToList();
+        }
+
+        private void button_spectable_Click(object sender, RoutedEventArgs e)
+        {
+
+            liste.ItemsSource = Globals.Zombilenium.ListeAttraction.OfType<Spectacle>().ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
