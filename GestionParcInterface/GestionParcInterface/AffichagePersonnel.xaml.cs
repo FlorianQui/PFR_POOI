@@ -99,11 +99,11 @@ namespace GestionParcInterface
 
         private void liste_AddingNewItem(object sender, AddingNewItemEventArgs e)
         {
-            e.NewItem = new Sorcier()
-            {
-            };
+            //e.NewItem = new Sorcier()
+            //{
+            //};
 
-            Globals.Zombilenium.Personnel.Employes.Add((Employe) e.NewItem);
+            //Globals.Zombilenium.Personnel.Employes.Add((Employe) e.NewItem);
 
             
         }
