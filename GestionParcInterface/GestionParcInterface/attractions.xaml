@@ -9,7 +9,7 @@
     <DockPanel Name="attraction_Dock" Height="553.6" Width="auto" Background="Gray">
         <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray" Margin="0,0,0,-0.4">
             <Button Content="Affichage liste par attractions ->" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210" Click="Button_Click"/>
-            <Button Name ="button_ajout_attraction" Content="Ajouter une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210" Margin="-1,0,0,0" Click="button_ajoutattraction_Click" />
+            <Button Name ="button_ajout_attraction" Content="Ajouter une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"  />
             <Button Content="Supprimer une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
         </StackPanel>
         <StackPanel Name ="stackpanel_droite" DockPanel.Dock="Right">
