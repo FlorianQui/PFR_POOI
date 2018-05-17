@@ -22,13 +22,14 @@ namespace GestionParcInterface
     /// </summary>
     public partial class Ajout_personnel : UserControl
     {
-        private int[] arg;
+        private Type type;
         public Ajout_personnel()
         {
             InitializeComponent();
         }
         private void button_sorcier_Click(object sender, RoutedEventArgs e)
         {
+            type = typeof(Sorcier);
             int i = 0;
             foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(Sorcier)))
             {              
@@ -83,6 +84,40 @@ namespace GestionParcInterface
                 var t = v.Children[1] as TextBox;
                 employe.Add(t.Text);
             }
+            dynamic obj = Activator.CreateInstance(type);
+            obj.Matricule = int.Parse(employe[7]);
+            obj.Nom = employe[3];
+            obj.Prenom = employe[4];
+            if (employe[4] != null) obj.Sexe = Globals.Zombilenium.ChoixSexe(employe[5]);
+            obj.FonctionDansEntreprise = employe[6];
+
+            if (!(obj is Sorcier))
+            {
+                obj.Cagnotte = int.Parse(employe[6]); // .
+                // if (line[7] != null) obj.Affectation = this.ListeAttraction.Find(attraction => attraction.Identifiant == int.Parse(line[7]));
+
+                if (obj is Demon) obj.Force = int.Parse(employe[8]); //.
+                if (obj is LoupGarou) obj.IndiceCruaute = double.Parse(employe[8]);//.
+                if (obj is Vampire) obj.IndiceLuminosite = double.Parse(employe[8]);//.
+                if (obj is Zombie)//.
+                {
+                    obj.DegreDecomposition = int.Parse(employe[9]);
+                    if (employe[8] != null) obj.CouleurZombie = Globals.Zombilenium.ChoixCouleurZombie(employe[8]);
+                }
+            }
+
+            if (obj is Sorcier)
+            {
+                obj.Tatouage = employe[0];
+                if (employe[1] != null)
+
+                {
+                    string[] pouvoir = employe[1].Split('-');
+                    foreach (string s in pouvoir) obj.Pouvoirs.Add(s);
+                }
+
+            }
+           
         }
     }
 }
