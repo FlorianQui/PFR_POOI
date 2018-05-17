@@ -22,6 +22,7 @@ namespace GestionParcInterface
     /// </summary>
     public partial class AffichagePersonnel : UserControl
     {
+        private Type type;
         public AffichagePersonnel()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace GestionParcInterface
         {
             liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Sorcier>().ToList();
             button_recherche_classe.Text = " Sorcier";
-
+            type = typeof(Sorcier);
 
             foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(typeof(Sorcier)))
             {
@@ -73,6 +74,38 @@ namespace GestionParcInterface
         private void liste_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Debug.WriteLine(sender.GetType());
+        }
+
+        private void result_research_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void button_research_Click(object sender, RoutedEventArgs e)
+        {
+            //combobox_research.SelectionBoxItemStringFormat
+
+            //var result = Globals.Zombilenium.Personnel.Employes.FindAll(e =>
+            //{
+            //    type.GetProperty(textbox_select_research.Text);
+                
+            //});
+        }
+
+        private void result_research_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+
+        }
+
+        private void liste_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            e.NewItem = new Sorcier()
+            {
+            };
+
+            Globals.Zombilenium.Personnel.Employes.Add((Employe) e.NewItem);
+
+            
         }
     }
 }

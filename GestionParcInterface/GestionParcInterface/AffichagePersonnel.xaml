@@ -24,19 +24,23 @@
             <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
             <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
         </Grid>
+        
         <ScrollViewer>
-            <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged">
-
-            </DataGrid>
+            <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged" AddingNewItem="liste_AddingNewItem"/>
         </ScrollViewer>
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock>RECHERCHE </TextBlock>
             <TextBlock Name="button_recherche_classe"/>
         </StackPanel>
+        
         <StackPanel Orientation="Horizontal">
-            <ComboBox Name="combobox_research">
-                
-            </ComboBox>
+            <ComboBox Name="combobox_research" Width="100"/>
+            <TextBox Name="textbox_select_research" Background="White" Width="200"/>
+            <Button x:Name="button_research" Content="Rechercher" Width="100" HorizontalAlignment="Right" Click="button_research_Click"/>
         </StackPanel>
+        
+        <DataGrid Name="result_research" SelectionChanged="result_research_SelectionChanged"/>
+        
     </StackPanel>
 </UserControl>

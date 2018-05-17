@@ -53,9 +53,9 @@ namespace GestionParcInterface
                 result += "Madame ";
             }
 
-            result += Nom.ToUpper() + " " + prenom +
-                        " travaille comme " + FonctionDansEntreprise +
-                        " : Matricule | " + Matricule + " |";
+            //result += Nom.ToUpper() + " " + prenom +
+                       // " travaille comme " + FonctionDansEntreprise +
+                       // " : Matricule | " + Matricule + " |";
 
             return result;
         }
