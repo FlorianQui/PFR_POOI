@@ -22,5 +22,6 @@
                 </StackPanel>
             </Expander>
         </StackPanel>
+        <ListBox Height="553.6" VerticalAlignment="Top" Width="100"/>
     </DockPanel>
 </UserControl>
