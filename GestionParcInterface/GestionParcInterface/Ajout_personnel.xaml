@@ -5,10 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d" >
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="test" Background="Aqua"/>
-            <TextBlock Text="test2" Background="Beige"/>
+    <StackPanel>
+        <TextBlock>Ajout d'un employé</TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="button_sorcier" Content="Sorciers" Grid.Column="0" Click="button_sorcier_Click"/>
+            <Button Name="button_monstres" Content="Monstres" Grid.Column="1" Click="button_monstres_Click"/>
+            <Button Name="button_demons" Content="Démons" Grid.Column="2" Click="button_demons_Click"/>
+            <Button Name="button_fantomes" Content="Fantômes" Grid.Column="3" Click="button_fantomes_Click"/>
+            <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
+            <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
+        </Grid>
+        <StackPanel Name="ajout" Orientation="Horizontal">
+            
         </StackPanel>
     </StackPanel>
 </UserControl>
