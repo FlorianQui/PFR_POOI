@@ -24,8 +24,8 @@
             <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
             <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
         </Grid>
-        <StackPanel Name="ajout" Orientation="Horizontal">
-            
-        </StackPanel>
+        <StackPanel Name="ajout" Orientation="Horizontal"/>
+        <Button Name="button_test" Click="button_test_Click"/>
+        <TextBlock Name="test"/>
     </StackPanel>
 </UserControl>
