@@ -43,7 +43,9 @@ namespace GestionParcInterface
 
         private void button_attractions_Click(object sender, RoutedEventArgs e)
         {
-
+            attractions attractions = new attractions();
+            control.Children.Clear();
+            control.Children.Add(attractions);
         }
     }
 }

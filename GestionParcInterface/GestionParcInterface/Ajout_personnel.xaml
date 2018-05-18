@@ -4,19 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="Gray">
-        <TextBlock TextWrapping="Wrap" Text="*Merci de remplir les cases ci dessous afin d'ajouter la personne*"/>
-        <TextBlock TextWrapping="Wrap" Text="NOM :"/>
-        <TextBlock TextWrapping="Wrap" Text="PRENOM :"/>
-        <TextBlock TextWrapping="Wrap" Text="MATRICULE :"/>
-        <TextBlock TextWrapping="Wrap" Text="SEXE :"/>
-        <TextBlock TextWrapping="Wrap" Text="FONCTION :"/>
-        <TextBlock TextWrapping="Wrap" Text=" Remplir seulement pour la classe correspondante : "/>
-        <TextBlock TextWrapping="Wrap" Text="Cagnotte :"/>
-        <TextBlock TextWrapping="Wrap" Text="Tatouage "/>
-        <TextBlock TextWrapping="Wrap" Text="Force "/>
-        <TextBlock TextWrapping="Wrap" Text="Indice de cruauté"/>
+             mc:Ignorable="d" >
+    <StackPanel>
+        <TextBlock>Ajout d'un employé</TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="button_sorcier" Content="Sorciers" Grid.Column="0" Click="button_sorcier_Click"/>
+            <Button Name="button_monstres" Content="Monstres" Grid.Column="1" Click="button_monstres_Click"/>
+            <Button Name="button_demons" Content="Démons" Grid.Column="2" Click="button_demons_Click"/>
+            <Button Name="button_fantomes" Content="Fantômes" Grid.Column="3" Click="button_fantomes_Click"/>
+            <Button Name="button_zombies" Content="Zombies" Grid.Column="4" Click="button_zombies_Click"/>
+            <Button Name="button_loup_garou" Content="Loup-garou" Grid.Column="5" Click="button_loup_garou_Click"/>
+        </Grid>
+        <StackPanel Name="ajout" Orientation="Horizontal"/>
+        <Button Name="button_test" Click="button_test_Click"/>
+        <TextBlock Text="Nom" Width="100" HorizontalAlignment="Left" />
+        <TextBox Name="nom" Width="100" HorizontalAlignment="Left" />
+        <TextBlock Text="Prénom"  Width="100" HorizontalAlignment="Left"  />
+        <TextBox Name ="prenom"  Width="100" HorizontalAlignment="Left"/>
+        <TextBlock Text="Matricule"  Width="100" HorizontalAlignment="Left" />
+        <TextBox Name="matricule"  Width="100" HorizontalAlignment="Left" RenderTransformOrigin="0.506,-1.398"  />
+        <TextBlock Text="Sexe"  Width="100" HorizontalAlignment="Left"/>
+        <TextBox Name="sexe"  Width="100" HorizontalAlignment="Left" />
     </StackPanel>
 </UserControl>

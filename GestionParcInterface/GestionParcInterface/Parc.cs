@@ -209,7 +209,9 @@ namespace GestionParcInterface
             Debug.WriteLine("Starting peuplement via csv");
             try
             {
-                StreamReader reader = new StreamReader("Listing.csv");
+                string listingPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                Debug.WriteLine(listingPath);
+                StreamReader reader = new StreamReader(listingPath + "/Listing.csv");
                 
                 while (!reader.EndOfStream)
                 {

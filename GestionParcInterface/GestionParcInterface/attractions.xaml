@@ -4,47 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d" 
-             d:DesignHeight="553.6" d:DesignWidth="904.8">
+             mc:Ignorable="d" >
     <DockPanel Name="attraction_Dock" Height="553.6" Width="auto" Background="Gray">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
-            <Button Content="Afficher liste attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
-            <Button Content="Ajouter une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210" Margin="-1,0,0,0"/>
-            <Button Content="Supprimer une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
-            <Expander Header="Informations sur une Boutique" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left"  >
-                <StackPanel>
-                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"  />
-                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Type de boutique" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                </StackPanel>
-            </Expander>
-            <Expander Header="Informations sur un DarkRide" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left"   >
-                <StackPanel>
-                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" Height="20" />
-                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Type de véhicule" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Durée de l'attraction" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                </StackPanel>
-            </Expander>
-            <Expander Header="Informations sur un RollerCoaster" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
-                <StackPanel>
-                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Âge et taille mini " BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Type d'attraction" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                </StackPanel>
-            </Expander>
-            <Expander Header="Informations sur un Spectacle" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
-                <StackPanel>
-                    <Button Content="Numéro d'identifiant" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Nombre de personnes mini" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Nom de la salle" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Nombre de places" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                </StackPanel>
-            </Expander>
-        </StackPanel>
-        <StackPanel DockPanel.Dock="Right">
-            <TextBlock>Liste des attractions</TextBlock>
+        <StackPanel Name ="stackpanel_droite" DockPanel.Dock="Right">
+            <TextBlock TextAlignment="Center">Liste des attractions</TextBlock>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -53,19 +16,14 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Button Name="button_boutique" Content="Boutiques" Grid.Column="0" />
-                <Button Name="button_darkride" Content="DarkRide" Grid.Column="1"/>
-                <Button Name="button_rollercoaster" Content="RollerCoaster" Grid.Column="2" />
-                <Button Name="button_spectable" Content="Spectable" Grid.Column="3"/>
+                <Button Name="button_boutique" Content="Boutiques" Grid.Column="0" Click="button_boutique_Click"/>
+                <Button Name="button_darkride" Content="DarkRide" Grid.Column="1" Click="button_darkride_Click"/>
+                <Button Name="button_rollercoaster" Content="RollerCoaster" Grid.Column="2" Click="button_rollercoaster_Click" />
+                <Button Name="button_spectable" Content="Spectacle" Grid.Column="3" Click="button_spectable_Click"/>
             </Grid>
             <ScrollViewer>
-                <DataGrid Name="liste">
-
-                </DataGrid>
+                <DataGrid Name="liste" RowEditEnding="liste_RowEditEnding"/>
             </ScrollViewer>
-
-
-
         </StackPanel>
     </DockPanel>
 </UserControl>

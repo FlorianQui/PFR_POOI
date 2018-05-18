@@ -1,14 +1,14 @@
-﻿<UserControl x:Class="GestionParcInterface.personnels"
+﻿<UserControl x:Class="GestionParcInterface.recherche_personnel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d">
-    <DockPanel Name="personnel_Dock" Width="auto" Background="Gray">
-        <StackPanel Name="control" DockPanel.Dock="Right">
-            <local:AffichagePersonnel/>
+             mc:Ignorable="d" >
+    <StackPanel Background="Gray">
+        <TextBlock>Faire une recherche d'employé</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Recherche d'un :</TextBlock>
         </StackPanel>
-    </DockPanel>
-        
+    </StackPanel>
 </UserControl>

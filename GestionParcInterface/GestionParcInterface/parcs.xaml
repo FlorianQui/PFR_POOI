@@ -5,24 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d">
-             
-    <DockPanel Name="direction_Dock" Height="553.6" Width="auto" Background="Gray">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
-            <Button Content="Afficher liste direction" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
-            <Button Content="Informations générales du parc" BorderBrush="Transparent" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" Width="210" />
-            <Button Content="Nombre d'attractions dans le parc" BorderBrush="Transparent" Background="LightGray" Foreground="Black" HorizontalAlignment="Left" Width="210"/>
-            <Button Content="Nombre d'employés dans le parc" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
-            <Expander Header="Informations sur une personne" Width="210" Foreground="Black" Background="LightGray" HorizontalAlignment="Left" >
-                <StackPanel >
-                    <Button Content="Mr Von Bloodt" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Mr Canilhac" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Mme Von Bloodt" BorderBrush="DarkGray" Background="DarkGray" Foreground="White" />
-                    <Button Content="Mr Belbertel" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                    <Button Content="Mme Malkiewicz" BorderBrush="DarkGray" Background="DarkGray" Foreground="White"/>
-                </StackPanel>
-            </Expander>
-        </StackPanel>
 
-
-    </DockPanel>
+    <Grid>
+        <Image Source="image_parc.png" Stretch="Fill"/>
+    </Grid>
 </UserControl>

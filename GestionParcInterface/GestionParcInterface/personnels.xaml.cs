@@ -37,44 +37,18 @@ namespace GestionParcInterface
             InitializeComponent();
         }
 
-        private void button_sorcier_Click(object sender, RoutedEventArgs e)
+        private void button_ajout_employe_Click(object sender, RoutedEventArgs e)
         {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Sorcier>().ToList();
+            Ajout_personnel ajout_Personnel = new Ajout_personnel();
+            control.Children.Clear();
+            control.Children.Add(ajout_Personnel);
         }
 
-        private void button_monstres_Click(object sender, RoutedEventArgs e)
+        private void button_affichage_personnels_Click(object sender, RoutedEventArgs e)
         {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Monstre>().ToList();
-        }
-
-        private void button_demons_Click(object sender, RoutedEventArgs e)
-        {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Demon>().ToList();
-        }
-
-        private void button_zombies_Click(object sender, RoutedEventArgs e)
-        {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Zombie>().ToList();
-        }
-
-        private void button_loup_garou_Click(object sender, RoutedEventArgs e)
-        {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<LoupGarou>().ToList();
-        }
-
-        private void button_fantomes_Click(object sender, RoutedEventArgs e)
-        {
-            liste.ItemsSource = Globals.Zombilenium.Personnel.Employes.OfType<Fantome>().ToList();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void liste_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Debug.WriteLine(sender.GetType());
+            AffichagePersonnel affichagePersonnel = new AffichagePersonnel();
+            control.Children.Clear();
+            control.Children.Add(affichagePersonnel);
         }
     }
 }
