@@ -26,6 +26,13 @@
         </Grid>
         <StackPanel Name="ajout" Orientation="Horizontal"/>
         <Button Name="button_test" Click="button_test_Click"/>
-        <TextBlock Name="test"/>
+        <TextBlock Text="Nom" Width="100" HorizontalAlignment="Left" />
+        <TextBox Name="nom" Width="100" HorizontalAlignment="Left" />
+        <TextBlock Text="Prénom"  Width="100" HorizontalAlignment="Left"  />
+        <TextBox Name ="prenom"  Width="100" HorizontalAlignment="Left"/>
+        <TextBlock Text="Matricule"  Width="100" HorizontalAlignment="Left" />
+        <TextBox Name="matricule"  Width="100" HorizontalAlignment="Left" RenderTransformOrigin="0.506,-1.398"  />
+        <TextBlock Text="Sexe"  Width="100" HorizontalAlignment="Left"/>
+        <TextBox Name="sexe"  Width="100" HorizontalAlignment="Left" />
     </StackPanel>
 </UserControl>

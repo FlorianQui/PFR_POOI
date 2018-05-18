@@ -47,6 +47,7 @@ namespace GestionParcInterface
                 ajout.Children.Add(stackPanel);
                 i++;
             }
+
             Button validation = new Button();
             ajout.Children.Add(validation);
             //ajout.header
@@ -117,7 +118,7 @@ namespace GestionParcInterface
                 }
 
             }
-           
+          
         }
     }
 }
