@@ -26,7 +26,7 @@
         </Grid>
         
         <ScrollViewer>
-            <DataGrid Name="liste" SelectionChanged="liste_SelectionChanged" AddingNewItem="liste_AddingNewItem"/>
+            <DataGrid Name="liste" RowEditEnding="liste_RowEditEnding" CanUserDeleteRows="True" KeyDown="liste_KeyDown"/>
         </ScrollViewer>
         
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
