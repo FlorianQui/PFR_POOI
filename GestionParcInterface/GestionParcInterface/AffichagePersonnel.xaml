@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d" >
     <StackPanel>
-        <TextBlock>Liste du personnel</TextBlock>
+        <TextBlock TextAlignment="Center">Liste du personnel</TextBlock>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -26,7 +26,7 @@
         </Grid>
         
         <ScrollViewer>
-            <DataGrid Name="liste" RowEditEnding="liste_RowEditEnding" CanUserDeleteRows="True" KeyDown="liste_KeyDown"/>
+            <DataGrid Name="liste" RowEditEnding="liste_RowEditEnding" CanUserDeleteRows="True"/>
         </ScrollViewer>
         
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">

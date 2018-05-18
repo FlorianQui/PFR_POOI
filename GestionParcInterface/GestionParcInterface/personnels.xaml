@@ -5,13 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
              mc:Ignorable="d">
-      <DockPanel Name="personnel_Dock" Height="553.6" Width="auto" Background="Gray">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray">
-            <Button Name="button_affichage_personnels" Content="Afficher liste personnel" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="button_affichage_personnels_Click"/>
-            <Button Name="button_ajout_employe" Content="Ajout d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210" Click="button_ajout_employe_Click"/>
-            <Button Content="Suppression d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
-            <Button Content="Recherche d'un employé" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left" Width="210"/>
-        </StackPanel>
+    <DockPanel Name="personnel_Dock" Width="auto" Background="Gray">
         <StackPanel Name="control" DockPanel.Dock="Right">
             <local:AffichagePersonnel/>
         </StackPanel>

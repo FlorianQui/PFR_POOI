@@ -4,16 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionParcInterface"
-             mc:Ignorable="d" 
-             d:DesignHeight="553.6" d:DesignWidth="904.8">
+             mc:Ignorable="d" >
     <DockPanel Name="attraction_Dock" Height="553.6" Width="auto" Background="Gray">
-        <StackPanel Height="auto" HorizontalAlignment="Left" Width="210" DockPanel.Dock="Left" Background="LightGray" Margin="0,0,0,-0.4">
-            <Button Content="Affichage liste par attractions ->" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210" Click="Button_Click"/>
-            <Button Name ="button_ajout_attraction" Content="Ajouter une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"  />
-            <Button Content="Supprimer une attractions" BorderBrush="Transparent" Background="LightGray" HorizontalAlignment="Left"  Width="210"/>
-        </StackPanel>
         <StackPanel Name ="stackpanel_droite" DockPanel.Dock="Right">
-            <TextBlock>Liste des attractions</TextBlock>
+            <TextBlock TextAlignment="Center">Liste des attractions</TextBlock>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -28,13 +22,8 @@
                 <Button Name="button_spectable" Content="Spectacle" Grid.Column="3" Click="button_spectable_Click"/>
             </Grid>
             <ScrollViewer>
-                <DataGrid Name="liste">
-
-                </DataGrid>
+                <DataGrid Name="liste" RowEditEnding="liste_RowEditEnding"/>
             </ScrollViewer>
-
-
-
         </StackPanel>
     </DockPanel>
 </UserControl>
